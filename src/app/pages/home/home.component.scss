@@ -1,0 +1,24 @@
+@import "functions";
+@import "variables";
+
+.home {
+  margin-top: rem(48);
+  padding: rem(0 64);
+
+  &__last-pods {
+    display: flex;
+    column-gap: rem(20);
+  }
+
+  h2,
+  h3 {
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  h3 {
+    margin-top: rem(48);
+  }
+}

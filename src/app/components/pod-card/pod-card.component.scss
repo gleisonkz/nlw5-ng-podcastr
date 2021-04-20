@@ -1,0 +1,58 @@
+@import "functions";
+@import "colors";
+
+:host {
+  flex-grow: 1;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  max-width: rem(432);
+  height: rem(136);
+  background-color: #ffffff;
+  border: 1px solid #e6e8eb;
+  border-radius: 24px;
+  padding: rem(20 20 20 20);
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-secondary-800;
+
+    white-space: nowrap;
+    max-width: rem(220);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__image {
+    width: rem(96);
+    height: rem(96);
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  &__info {
+    margin-left: rem(16);
+  }
+
+  &__details {
+    display: flex;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    &::after {
+      content: "";
+      margin: rem(0 8);
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background-color: #dddddd;
+      border-radius: 50%;
+    }
+  }
+}

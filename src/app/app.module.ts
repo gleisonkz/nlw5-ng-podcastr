@@ -14,10 +14,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlayerComponent } from './components/player/player.component';
+import { PodCardComponent } from './components/pod-card/pod-card.component';
+import { HomePageComponent } from './pages/home/home.component';
 registerLocaleData(ptBr);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, PlayerComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    PlayerComponent,
+    PodCardComponent,
+    HomePageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
