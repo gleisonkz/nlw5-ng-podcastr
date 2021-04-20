@@ -1,0 +1,84 @@
+@import "mixins";
+@import "colors";
+
+.player {
+  padding: rem(41 64 48 64);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  &__header {
+    &__image {
+      margin-right: rem(18.67);
+    }
+
+    @include flex-center;
+    color: white;
+  }
+
+  &__preview {
+    width: rem(296);
+    height: rem(346);
+    background-color: red;
+    border: 1.5px dashed $color-primary-300;
+    border-radius: 24px;
+    background: linear-gradient(
+      143.8deg,
+      rgba(145, 100, 250, 0.8) 0%,
+      rgba(145, 100, 250, 0) 100%
+    );
+
+    @include flex-center;
+
+    text-align: center;
+
+    &__text {
+      display: inline-block;
+      color: white;
+      max-width: rem(150);
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+  }
+
+  &__actions {
+    button {
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: $color-primary-400;
+      }
+    }
+
+    &__progress {
+      display: flex;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 17px;
+      align-items: center;
+
+      mat-slider {
+        width: rem(174);
+        margin: rem(0 14);
+        color: $color-success;
+      }
+
+      ::ng-deep .mat-slider-track-background {
+        background-color: $color-primary-300;
+      }
+
+      ::ng-deep .mat-accent .mat-slider-track-fill {
+        background-color: $color-success;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+}

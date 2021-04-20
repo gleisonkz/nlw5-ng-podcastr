@@ -36,13 +36,6 @@ button {
   --gray-500: #808080;
   --gray-800: #494d4b;
 
-  --green-500: #04d361;
-
-  --purple-300: #9f75ff;
-  --purple-400: #9164fa;
-  --purple-500: #8257e5;
-  --purple-800: #6f48c9;
-
   @each $name, $color in $project-colors {
     --color-#{$name}: #{$color};
   }
