@@ -1,0 +1,11 @@
+@import "functions";
+@import "colors";
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  min-width: rem(424);
+  background-color: $color-primary;
+}

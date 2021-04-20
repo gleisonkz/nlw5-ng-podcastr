@@ -1,0 +1,28 @@
+@import "functions";
+
+.logo {
+  margin-right: rem(33.18);
+}
+
+.text {
+  font-size: 14px;
+  line-height: 17px;
+  align-self: center;
+}
+
+mat-toolbar {
+  background-color: white;
+  padding: rem(32 64);
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-divider {
+    height: rem(24);
+    align-self: center;
+    margin-right: rem(32);
+  }
+}
