@@ -1,6 +1,12 @@
 <mat-toolbar>
   <div>
     <img
+      width="50"
+      class="logo"
+      src="../../../assets/icons/angular_logo.svg"
+      alt="Angular Logo"
+    />
+    <img
       class="logo"
       src="../../../assets/icons/logo.svg"
       alt="Podcastr Logo"
@@ -9,5 +15,5 @@
     <span class="text">O melhor para você ouvir sempre</span>
   </div>
 
-  <span class="text">{{ currentDate | date }}</span>
+  <span class="text">{{ currentDate | date: "E d MMMM " }}</span>
 </mat-toolbar>

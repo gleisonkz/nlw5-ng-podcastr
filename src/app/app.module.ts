@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlayerComponent } from './components/player/player.component';
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, PlayerComponent],
@@ -27,7 +30,7 @@ import { PlayerComponent } from './components/player/player.component';
     MatIconModule,
     MatSliderModule,
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
