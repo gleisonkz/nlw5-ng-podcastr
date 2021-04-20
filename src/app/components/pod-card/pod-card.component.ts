@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Episode } from 'src/app/models/episode.model';
 
 @Component({
   selector: 'pd-pod-card',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PodCardComponent implements OnInit {
   currentDate = new Date();
+  @Input() episode: Episode;
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,8 +1,10 @@
 <div class="home">
   <h2>Últimos lançamentos</h2>
   <div class="home__last-pods">
-    <pd-pod-card></pd-pod-card>
-    <pd-pod-card></pd-pod-card>
+    <pd-pod-card
+      [episode]="episode"
+      *ngFor="let episode of lastEpisodes"
+    ></pd-pod-card>
   </div>
 
   <h3>Todos os episódios</h3>

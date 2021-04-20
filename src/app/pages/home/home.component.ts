@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Episode } from 'src/app/models/episode.model';
+import { EpisodeService } from 'src/app/services/episode.service';
 
 @Component({
   selector: 'pd-home',
@@ -6,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  constructor() {}
+  constructor(private episodeService: EpisodeService) {}
+  lastEpisodes: [Episode, Episode];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.episodeService.getRecentEpisodes().subscribe((episodes) => {
+      this.lastEpisodes = episodes;
+    });
+  }
 }
