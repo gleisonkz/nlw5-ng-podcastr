@@ -8,27 +8,17 @@ import { Episode } from 'src/app/models/episode.model';
 })
 export class EpisodeService {
   constructor(private httpClient: HttpClient) {}
-  readonly baseURL = 'http://localhost:3000/episodes';
+  readonly baseURL = 'http://localhost:3000';
 
-  sortByDate(episodes: Episode[]): Episode[] {
-    const sortedEpisodes: Episode[] = episodes
-      .map((c) => ({ ...c, published_at: new Date(c.published_at) }))
-      .sort((a, b) => a.published_at.getTime() - b.published_at.getTime());
-    return sortedEpisodes;
-  }
+  getRecentEpisodes(): Observable<Episode[]> {
+    const params = {
+      _limit: '12',
+      _sort: 'published_at',
+      _order: 'desc',
+    };
 
-  getLastTwoEpisodes(data: Episode[]): [Episode, Episode] {
-    const sortedEpisodes = this.sortByDate(data);
-
-    const lastTwoEpisodes: [Episode, Episode] = [
-      sortedEpisodes[sortedEpisodes.length - 1],
-      sortedEpisodes[sortedEpisodes.length - 2],
-    ];
-
-    return lastTwoEpisodes;
-  }
-
-  getRecentEpisodes(): Observable<[Episode, Episode]> {
-    return this.httpClient.get<[Episode, Episode]>(`${this.baseURL}?_limit=2`);
+    return this.httpClient.get<Episode[]>(`${this.baseURL}/episodes`, {
+      params,
+    });
   }
 }

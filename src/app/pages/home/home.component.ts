@@ -9,11 +9,13 @@ import { EpisodeService } from 'src/app/services/episode.service';
 })
 export class HomePageComponent implements OnInit {
   constructor(private episodeService: EpisodeService) {}
-  lastEpisodes: [Episode, Episode];
+  latestEpisodes: Episode[];
+  allEpisodes: Episode[];
 
   ngOnInit(): void {
     this.episodeService.getRecentEpisodes().subscribe((episodes) => {
-      this.lastEpisodes = episodes;
+      this.latestEpisodes = episodes.slice(0, 2);
+      this.allEpisodes = episodes.slice(2);
     });
   }
 }
