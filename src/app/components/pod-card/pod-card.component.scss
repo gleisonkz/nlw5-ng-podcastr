@@ -1,19 +1,27 @@
 @import "functions";
 @import "colors";
+@import "mixins";
 
 :host {
   flex-grow: 1;
 }
 
+$max-size-text: rem(220);
+
 .card {
+  position: relative;
   display: flex;
   width: 100%;
   max-width: rem(432);
-  height: rem(136);
+  height: rem(140);
   background-color: #ffffff;
   border: 1px solid #e6e8eb;
   border-radius: 24px;
   padding: rem(20 20 20 20);
+
+  &__info {
+    margin-left: rem(16);
+  }
 
   &__title {
     font-weight: 600;
@@ -21,10 +29,30 @@
     line-height: 20px;
     color: $color-secondary-800;
 
+    margin: rem(10 0);
+
     white-space: nowrap;
-    max-width: rem(220);
+    max-width: $max-size-text;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__members {
+    display: block;
+    max-width: rem(180);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__date-duration {
+    display: flex;
   }
 
   &__image {
@@ -32,14 +60,6 @@
     height: rem(96);
     border-radius: 16px;
     object-fit: cover;
-  }
-
-  &__info {
-    margin-left: rem(16);
-  }
-
-  &__details {
-    display: flex;
   }
 
   &__date {
@@ -54,5 +74,17 @@
       background-color: #dddddd;
       border-radius: 50%;
     }
+  }
+
+  &__play-button {
+    @include flex-center;
+    width: rem(40);
+    height: rem(40);
+    background-color: white;
+    border: 1px solid $color-secondary-100;
+    border-radius: rem(10);
+    position: absolute;
+    right: rem(25);
+    bottom: rem(25);
   }
 }
