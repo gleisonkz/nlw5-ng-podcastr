@@ -20,6 +20,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { PodCardComponent } from './components/pod-card/pod-card.component';
 import { EpisodeDetailPageComponent } from './pages/episode-detail/episode-detail.component';
 import { HomePageComponent } from './pages/home/home.component';
+import { HourPipe } from './pipes/hour.pipe';
 
 registerLocaleData(ptBr);
 
@@ -31,6 +32,7 @@ registerLocaleData(ptBr);
     PodCardComponent,
     HomePageComponent,
     EpisodeDetailPageComponent,
+    HourPipe,
   ],
   imports: [
     BrowserModule,
