@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Episode } from 'src/app/models/episode.model';
+import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   templateUrl: './episode-detail.component.html',
@@ -8,10 +9,17 @@ import { Episode } from 'src/app/models/episode.model';
 })
 export class EpisodeDetailPageComponent implements OnInit {
   episode: Episode;
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private playerService: PlayerService
+  ) {}
 
   ngOnInit(): void {
     this.episode = this.activatedRoute.snapshot.data.episode;
     console.log(this.episode);
+  }
+
+  play(): void {
+    this.playerService.play(this.episode);
   }
 }

@@ -8,7 +8,7 @@
       [src]="episode.thumbnail"
       alt="Episode Thumbnail"
     />
-    <button class="episode__play-button">
+    <button (click)="play()" class="episode__play-button">
       <img src="../../../assets/icons/play.svg" alt="Play Button Icon" />
     </button>
   </div>
@@ -18,9 +18,7 @@
     <span class="episode__date">
       {{ episode.published_at | date: "d MMM YY" }}</span
     >
-    <span class="episode__duration">
-      {{ episode.file.duration * 1000 | date: "H:mm:ss":"UTC" }}</span
-    >
+    <span class="episode__duration"> {{ episode.file.duration | hour }}</span>
   </p>
   <mat-divider></mat-divider>
   <p [innerHTML]="episode.description" class="episode__description"></p>
