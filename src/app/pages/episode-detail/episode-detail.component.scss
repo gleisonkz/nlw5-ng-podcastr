@@ -21,10 +21,10 @@ $thumb-size: rem(780);
   &__back-button,
   &__play-button {
     position: absolute;
-    transition: filter 0.2s;
+    @include flex-center;
     @include size(48);
     border-radius: 12px;
-    @include flex-center;
+    transition: filter 0.2s;
 
     &:hover {
       filter: brightness(0.9);
@@ -50,13 +50,9 @@ $thumb-size: rem(780);
   }
 
   &__title {
-    font-family: Lexend;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 40px;
-    color: #494d4b;
+    @include large-title;
     margin-top: rem(32);
+    color: #494d4b;
   }
 
   &__members,

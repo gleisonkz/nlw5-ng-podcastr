@@ -1,5 +1,5 @@
-@import 'functions';
-@import 'variables';
+@import "functions";
+@import "variables";
 
 @mixin flex-center($direction: row) {
   display: flex;
@@ -80,4 +80,26 @@
 @mixin save-button {
   background-color: $color-success;
   color: $color-text-on-success;
+}
+
+@mixin base-title {
+  font-family: $font-secondary;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin small-title {
+  @include base-title;
+  font-size: rem(16);
+  line-height: rem(20);
+}
+@mixin medium-title {
+  @include base-title;
+  font-size: rem(24);
+  line-height: rem(30);
+}
+@mixin large-title {
+  @include base-title;
+  font-size: rem(32);
+  line-height: rem(40);
 }

@@ -31,8 +31,8 @@ $max-size-text: rem(220);
 
     margin: rem(10 0);
 
-    white-space: nowrap;
     max-width: $max-size-text;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -60,8 +60,7 @@ $max-size-text: rem(220);
   }
 
   &__image {
-    width: rem(96);
-    height: rem(96);
+    @include size(96);
     border-radius: 16px;
     object-fit: cover;
   }
@@ -74,21 +73,19 @@ $max-size-text: rem(220);
       content: "";
       margin: rem(0 8);
       display: inline-block;
-      width: 4px;
-      height: 4px;
+      @include size(4);
       background-color: $color-surface;
       border-radius: 50%;
     }
   }
 
   &__play-button {
+    position: absolute;
     @include flex-center;
-    width: rem(40);
-    height: rem(40);
+    @include size(40);
     background-color: white;
     border: 1px solid $color-secondary-100;
     border-radius: rem(10);
-    position: absolute;
     right: rem(25);
     bottom: rem(25);
     transition: filter 0.2s;
