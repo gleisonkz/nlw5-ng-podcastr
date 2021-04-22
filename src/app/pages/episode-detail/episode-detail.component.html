@@ -1,19 +1,27 @@
 <div class="episode">
-  <img
-    class="episode__image"
-    [src]="episode.thumbnail"
-    alt="Episode Thumbnail"
-  />
+  <div class="episode__thumb">
+    <button [routerLink]="['/']" class="episode__back-button">
+      <img src="../../../assets/icons/arrow-left.svg" alt="Play Button Icon" />
+    </button>
+    <img
+      class="episode__image"
+      [src]="episode.thumbnail"
+      alt="Episode Thumbnail"
+    />
+    <button class="episode__play-button">
+      <img src="../../../assets/icons/play.svg" alt="Play Button Icon" />
+    </button>
+  </div>
   <h1 class="episode__title">{{ episode.title }}</h1>
   <p>
     <span class="episode__members">{{ episode.members }}</span>
     <span class="episode__date">
-      {{ episode.published_at | date: "d MMMM YY" }}</span
+      {{ episode.published_at | date: "d MMM YY" }}</span
     >
     <span class="episode__duration">
       {{ episode.file.duration * 1000 | date: "H:mm:ss":"UTC" }}</span
     >
   </p>
   <mat-divider></mat-divider>
-  <p class="episode__description">{{ episode?.description }}</p>
+  <p [innerHTML]="episode.description" class="episode__description"></p>
 </div>

@@ -1,0 +1,79 @@
+@import "functions";
+@import "variables";
+@import "colors";
+@import "mixins";
+
+$thumb-size: rem(780);
+
+.episode {
+  padding: rem(48);
+  display: flex;
+  flex-direction: column;
+
+  &__thumb {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    width: $thumb-size;
+  }
+
+  &__back-button,
+  &__play-button {
+    position: absolute;
+    transition: filter 0.2s;
+    @include size(48);
+    border-radius: 12px;
+    @include flex-center;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  &__back-button {
+    left: 0;
+    transform: translateX(-50%);
+    background-color: $color-primary-500;
+  }
+  &__play-button {
+    right: 0;
+    transform: translateX(50%);
+    background-color: $color-success;
+  }
+
+  &__image {
+    width: $thumb-size;
+    object-fit: cover;
+    border-radius: 16px;
+    align-self: center;
+  }
+
+  &__title {
+    font-family: Lexend;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #494d4b;
+    margin-top: rem(32);
+  }
+
+  &__members,
+  &__date {
+    display: inline-flex;
+    align-items: center;
+    &::after {
+      content: "";
+      margin: rem(0 8);
+      display: inline-block;
+      @include size(4);
+      background-color: $color-secondary-500;
+      border-radius: 50%;
+    }
+  }
+
+  mat-divider {
+    margin-bottom: rem(32);
+  }
+}
