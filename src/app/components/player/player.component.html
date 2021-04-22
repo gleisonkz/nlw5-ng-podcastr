@@ -28,20 +28,20 @@
 
   <div class="player__actions">
     <div class="player__actions__progress">
-      <span>00:00</span>
-      <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+      <span>{{ timeElapsed$ | async }}</span>
       <mat-slider></mat-slider>
-      <span>00:00</span>
+      <span>{{ currentDuration$ | async | hour }}</span>
     </div>
 
     <div class="player__buttons">
-      <button mat-icon-button>
+      <button [disabled]="!currentEpisode" mat-icon-button>
         <img src="../../../assets/icons/shuffle.svg" alt="" />
       </button>
-      <button mat-icon-button>
+      <button [disabled]="!currentEpisode" mat-icon-button>
         <img src="../../../assets/icons/play-previous.svg" alt="" />
       </button>
       <button
+        [disabled]="!currentEpisode"
         [ngClass]="{ playing: isPlaying$ | async }"
         (click)="togglePlay()"
         mat-icon-button
@@ -56,10 +56,10 @@
           <img src="../../../assets/icons/play.svg" alt="" />
         </ng-template>
       </button>
-      <button mat-icon-button>
+      <button [disabled]="!currentEpisode" mat-icon-button>
         <img src="../../../assets/icons/play-next.svg" alt="" />
       </button>
-      <button mat-icon-button>
+      <button [disabled]="!currentEpisode" mat-icon-button>
         <img src="../../../assets/icons/repeat.svg" alt="" />
       </button>
     </div>
