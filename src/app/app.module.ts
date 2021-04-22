@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlayerComponent } from './components/player/player.component';
 import { PodCardComponent } from './components/pod-card/pod-card.component';
+import { EpisodeDetailPageComponent } from './pages/episode-detail/episode-detail.component';
 import { HomePageComponent } from './pages/home/home.component';
 
 registerLocaleData(ptBr);
@@ -28,6 +30,7 @@ registerLocaleData(ptBr);
     PlayerComponent,
     PodCardComponent,
     HomePageComponent,
+    EpisodeDetailPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ registerLocaleData(ptBr);
     MatSliderModule,
     MatTooltipModule,
     HttpClientModule,
+    MatTableModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],

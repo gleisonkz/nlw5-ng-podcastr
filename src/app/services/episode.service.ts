@@ -7,6 +7,11 @@ import { Episode } from 'src/app/models/episode.model';
   providedIn: 'root',
 })
 export class EpisodeService {
+  getEpisodeByID(episodeID: string): Observable<Episode> {
+    return this.httpClient.get<Episode>(
+      `${this.baseURL}/episodes/${episodeID}`
+    );
+  }
   constructor(private httpClient: HttpClient) {}
   readonly baseURL = 'http://localhost:3000';
 
