@@ -3,7 +3,6 @@ import { Episode } from 'src/app/models/episode.model';
 import { EpisodeService } from 'src/app/services/episode.service';
 
 @Component({
-  selector: 'pd-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
@@ -11,6 +10,14 @@ export class HomePageComponent implements OnInit {
   constructor(private episodeService: EpisodeService) {}
   latestEpisodes: Episode[];
   allEpisodes: Episode[];
+
+  displayedColumns: string[] = [
+    'podcast',
+    'members',
+    'published_at',
+    'duration',
+    'action',
+  ];
 
   ngOnInit(): void {
     this.episodeService.getRecentEpisodes().subscribe((episodes) => {

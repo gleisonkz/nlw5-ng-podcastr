@@ -1,5 +1,7 @@
 @import "functions";
 @import "variables";
+@import "colors";
+@import "mixins";
 
 .home {
   margin-top: rem(48);
@@ -20,5 +22,69 @@
 
   h3 {
     margin-top: rem(48);
+  }
+
+  table {
+    background-color: $color-background;
+    width: 100%;
+
+    th {
+      font-family: Lexend;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 15px;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+    }
+
+    td {
+      padding: rem(10 0);
+
+      &.data {
+        min-width: rem(75);
+      }
+
+      &.podcast {
+        font-family: Lexend;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13.5px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+
+        a {
+          color: $color-secondary-800;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        img {
+          width: rem(60);
+          height: rem(60);
+          border-radius: rem(8);
+          object-fit: cover;
+          margin-right: rem(10);
+        }
+      }
+    }
+  }
+
+  .play-button {
+    @include flex-center;
+    @include size(32);
+    background-color: #f7f8fa;
+    border: 1px solid $color-secondary-100;
+    border-radius: rem(10);
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 }
