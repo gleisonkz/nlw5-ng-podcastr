@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Episode } from 'src/app/models/episode.model';
 import { AudioService } from 'src/app/services/audio.service';
-import { mapEpisodeToPlayerEpisode } from 'src/app/utils/getPlayerEpisode';
+import { mapEpisodeToPlayerEpisode } from 'src/app/utils/mapPlayerEpisode';
 
 export interface PlayerEpisode {
   title: string;

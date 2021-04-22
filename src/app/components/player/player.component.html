@@ -9,7 +9,21 @@
   </h3>
 
   <div class="player__preview">
-    <span class="player__preview__text">Selecione um podcast para ouvir</span>
+    <span *ngIf="!currentEpisode; else image" class="player__preview__text">
+      Selecione um podcast para ouvir</span
+    >
+    <ng-template #image>
+      <img
+        class="player__preview__image"
+        [src]="currentEpisode?.thumbnail"
+        alt=""
+      />
+    </ng-template>
+  </div>
+
+  <div *ngIf="currentEpisode" class="player__details">
+    <h1 class="player__details__title">{{ currentEpisode.title }}</h1>
+    <p class="player__details__members">{{ currentEpisode.members }}</p>
   </div>
 
   <div class="player__actions">
@@ -27,8 +41,20 @@
       <button mat-icon-button>
         <img src="../../../assets/icons/play-previous.svg" alt="" />
       </button>
-      <button mat-icon-button aria-label="Play Icon Button">
-        <img src="../../../assets/icons/play.svg" alt="" />
+      <button
+        [ngClass]="{ playing: isPlaying$ | async }"
+        (click)="togglePlay()"
+        mat-icon-button
+        class="play-pause"
+      >
+        <img
+          *ngIf="isPlaying$ | async; else pause"
+          src="../../../assets/icons/pause.svg"
+          alt=""
+        />
+        <ng-template #pause>
+          <img src="../../../assets/icons/play.svg" alt="" />
+        </ng-template>
       </button>
       <button mat-icon-button>
         <img src="../../../assets/icons/play-next.svg" alt="" />

@@ -18,7 +18,7 @@
         <span>{{ episode.file.duration * 1000 | date: "H:mm:ss":"UTC" }}</span>
       </p>
 
-      <button class="card__play-button">
+      <button class="card__play-button" (click)="playAudio()">
         <img
           src="../../../assets/icons/play-green.svg"
           alt="Play Button Icon"

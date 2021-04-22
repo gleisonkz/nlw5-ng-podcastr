@@ -8,7 +8,7 @@
   </div>
 
   <h3>Todos os episódios</h3>
-  <table mat-table [dataSource]="allEpisodes" class="mat-elevation-z0">
+  <table mat-table [dataSource]="nextEpisodes" class="mat-elevation-z0">
     <ng-container matColumnDef="podcast">
       <th mat-header-cell *matHeaderCellDef>PODCAST</th>
       <td class="podcast" mat-cell *matCellDef="let element">
@@ -39,7 +39,7 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>TOCAR</th>
       <td mat-cell *matCellDef="let element">
-        <button class="play-button">
+        <button class="play-button" (click)="playAudio(element)">
           <img
             src="../../../assets/icons/play-green.svg"
             alt="Play Button Icon"
