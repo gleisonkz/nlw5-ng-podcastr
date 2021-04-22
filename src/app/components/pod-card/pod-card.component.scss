@@ -35,6 +35,10 @@ $max-size-text: rem(220);
     max-width: $max-size-text;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__details {
@@ -65,13 +69,14 @@ $max-size-text: rem(220);
   &__date {
     display: flex;
     align-items: center;
+
     &::after {
       content: "";
       margin: rem(0 8);
       display: inline-block;
       width: 4px;
       height: 4px;
-      background-color: #dddddd;
+      background-color: $color-surface;
       border-radius: 50%;
     }
   }
@@ -86,5 +91,10 @@ $max-size-text: rem(220);
     position: absolute;
     right: rem(25);
     bottom: rem(25);
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 }

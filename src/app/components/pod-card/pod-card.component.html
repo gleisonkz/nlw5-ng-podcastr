@@ -1,14 +1,16 @@
 <div class="card">
   <img [src]="episode.thumbnail" alt="Thumbnail" class="card__image" />
   <div class="card__info">
-    <h3
-      #title
-      [matTooltip]="title.innerText"
-      [matTooltipPosition]="'above'"
-      class="card__title"
-    >
-      {{ episode.title }}
-    </h3>
+    <a [routerLink]="['episode', episode.id]">
+      <h3
+        #title
+        [matTooltip]="title.innerText"
+        [matTooltipPosition]="'above'"
+        class="card__title"
+      >
+        {{ episode.title }}
+      </h3>
+    </a>
     <div class="card__details">
       <p class="card__members">{{ episode.members }}</p>
       <p class="card__date-duration">
