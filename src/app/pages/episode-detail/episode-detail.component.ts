@@ -20,6 +20,7 @@ export class EpisodeDetailPageComponent implements OnInit {
   }
 
   play(): void {
+    this.playerService.resetList();
     this.playerService.play(this.episode);
   }
 }
