@@ -2,11 +2,12 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { Episode } from 'src/app/models/episode.model';
-import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
   selector: 'pd-pod-card',
@@ -16,16 +17,11 @@ import { PlayerService } from 'src/app/services/player.service';
 export class PodCardComponent implements OnInit, AfterViewInit {
   currentDate = new Date();
   @Input() episode: Episode;
-  constructor(
-    private playerService: PlayerService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  @Output() playEvent = new EventEmitter<Episode>();
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
-
-  playAudio() {
-    this.playerService.play(this.episode);
-  }
 
   ngAfterViewInit(): void {
     this.cdr.detectChanges();
