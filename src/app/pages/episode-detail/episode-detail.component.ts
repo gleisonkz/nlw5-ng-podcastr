@@ -16,7 +16,6 @@ export class EpisodeDetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.episode = this.activatedRoute.snapshot.data.episode;
-    console.log(this.episode);
   }
 
   play(): void {

@@ -4,7 +4,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 import { Episode } from 'src/app/models/episode.model';
@@ -14,14 +13,12 @@ import { Episode } from 'src/app/models/episode.model';
   templateUrl: './pod-card.component.html',
   styleUrls: ['./pod-card.component.scss'],
 })
-export class PodCardComponent implements OnInit, AfterViewInit {
+export class PodCardComponent implements AfterViewInit {
   currentDate = new Date();
   @Input() episode: Episode;
   @Output() playEvent = new EventEmitter<Episode>();
 
   constructor(private cdr: ChangeDetectorRef) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.cdr.detectChanges();

@@ -1,21 +1,7 @@
 import { Episode } from 'src/app/models/episode.model';
-import { PlayerEpisode } from 'src/app/services/player.service';
+import { PlayerEpisode } from 'src/app/models/player-episode.model';
 
-export function mapEpisodeToPlayerEpisode(episodes: Episode[]): PlayerEpisode[];
-export function mapEpisodeToPlayerEpisode(episodes: Episode): PlayerEpisode;
-export function mapEpisodeToPlayerEpisode(episodes: any): any {
-  if (Array.isArray(episodes)) {
-    return episodes.map(
-      ({ title, members, thumbnail, file: { duration, url } }) => ({
-        title,
-        members,
-        thumbnail,
-        duration,
-        url,
-      })
-    );
-  }
-
+export function mapEpisodeToPlayerEpisode(episodes: Episode): PlayerEpisode {
   return {
     title: episodes.title,
     members: episodes.members,

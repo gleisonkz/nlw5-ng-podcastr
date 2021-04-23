@@ -1,15 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Episode } from 'src/app/models/episode.model';
+import { PlayerEpisode } from 'src/app/models/player-episode.model';
 import { mapEpisodeToPlayerEpisode } from 'src/app/utils/mapPlayerEpisode';
-
-export interface PlayerEpisode {
-  title: string;
-  members: string;
-  thumbnail: string;
-  duration: number;
-  url: string;
-}
 
 @Injectable({
   providedIn: 'root',
