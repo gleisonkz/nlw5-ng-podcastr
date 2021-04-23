@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Episode } from 'src/app/models/episode.model';
-import { EpisodeService } from 'src/app/services/episode.service';
+import {
+  EPISODE_SERVICE_TOKEN,
+  IEpisodeService,
+} from 'src/app/services/episode-service-token';
 import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
@@ -9,7 +12,8 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class HomePageComponent implements OnInit {
   constructor(
-    private episodeService: EpisodeService,
+    @Inject(EPISODE_SERVICE_TOKEN)
+    private episodeService: IEpisodeService,
     private playerService: PlayerService
   ) {}
   latestEpisodes: Episode[];

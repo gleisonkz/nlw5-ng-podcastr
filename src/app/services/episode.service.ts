@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Episode } from 'src/app/models/episode.model';
+import { IEpisodeService } from 'src/app/services/episode-service-token';
 
 @Injectable({
   providedIn: 'root',
 })
-export class EpisodeService {
+export class EpisodeService implements IEpisodeService {
   getEpisodeByID(episodeID: string): Observable<Episode> {
     return this.httpClient.get<Episode>(
       `${this.baseURL}/episodes/${episodeID}`
