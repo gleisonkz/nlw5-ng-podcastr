@@ -9,39 +9,52 @@
   </h3>
 
   <div class="player__preview">
-    <span *ngIf="!currentEpisode; else image" class="player__preview__text">
-      Selecione um podcast para ouvir</span
-    >
-    <ng-template #image>
-      <img
-        class="player__preview__image"
-        [src]="currentEpisode?.thumbnail"
-        alt=""
-      />
+    <img
+      *ngIf="currentEpisode$ | async as currentEpisode; else noPodcast"
+      class="player__preview__image"
+      [src]="currentEpisode?.thumbnail"
+      alt=""
+    />
+
+    <ng-template #noPodcast>
+      <span class="player__preview__text">
+        Selecione um podcast para ouvir</span
+      >
     </ng-template>
   </div>
 
-  <div *ngIf="currentEpisode" class="player__details">
+  <div
+    *ngIf="currentEpisode$ | async as currentEpisode"
+    class="player__details"
+  >
     <h1 class="player__details__title">{{ currentEpisode.title }}</h1>
     <p class="player__details__members">{{ currentEpisode.members }}</p>
   </div>
 
   <div class="player__actions">
     <div class="player__actions__progress">
-      <span>{{ timeElapsed$ | async }}</span>
-      <mat-slider></mat-slider>
+      <span>{{ timeElapsed$ | async | hour }}</span>
+      <mat-slider
+        (input)="sliderThumbChange($event)"
+        #slider
+        [max]="currentDuration$ | async"
+        [value]="timeElapsed$ | async"
+        step="0.1"
+      ></mat-slider>
       <span>{{ currentDuration$ | async | hour }}</span>
     </div>
 
+    {{ slider.value | json }}
+
     <div class="player__buttons">
-      <button [disabled]="!currentEpisode" mat-icon-button>
+      <button [disabled]="" mat-icon-button>
         <img src="../../../assets/icons/shuffle.svg" alt="" />
       </button>
-      <button [disabled]="!currentEpisode" mat-icon-button>
+      <button [disabled]="" mat-icon-button>
         <img src="../../../assets/icons/play-previous.svg" alt="" />
       </button>
       <button
-        [disabled]="!currentEpisode"
+        [disabled]=""
         [ngClass]="{ playing: isPlaying$ | async }"
         (click)="togglePlay()"
         mat-icon-button
@@ -56,10 +69,10 @@
           <img src="../../../assets/icons/play.svg" alt="" />
         </ng-template>
       </button>
-      <button [disabled]="!currentEpisode" mat-icon-button>
+      <button [disabled]="" mat-icon-button>
         <img src="../../../assets/icons/play-next.svg" alt="" />
       </button>
-      <button [disabled]="!currentEpisode" mat-icon-button>
+      <button [disabled]="" mat-icon-button>
         <img src="../../../assets/icons/repeat.svg" alt="" />
       </button>
     </div>
