@@ -15,7 +15,7 @@ export class EpisodeService {
   constructor(private httpClient: HttpClient) {}
   readonly baseURL = 'http://localhost:3000';
 
-  getRecentEpisodes(): Observable<Episode[]> {
+  getEpisodes(): Observable<Episode[]> {
     const params = {
       _limit: '12',
       _sort: 'published_at',
