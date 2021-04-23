@@ -2,6 +2,7 @@
   "name": "ng-podcastr",
   "version": "0.0.0",
   "scripts": {
+    "json": "json-server ./db.json",
     "ng": "ng",
     "start": "concurrently --kill-others \"json-server ./db.json\" \"ng serve -o\"",
     "build": "ng build",
