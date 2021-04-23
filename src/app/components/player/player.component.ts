@@ -12,6 +12,9 @@ export class PlayerComponent {
   isPlaying$ = this.playerService.isPlaying$;
   timeElapsed$ = this.playerService.timeElapsed$;
   currentDuration$ = this.playerService.duration$;
+  hasPrevious$ = this.playerService.hasPrevious$;
+  hasNext$ = this.playerService.hasNext$;
+  isLooping$ = this.playerService.isLooping$;
 
   constructor(private playerService: PlayerService) {}
 
@@ -22,5 +25,16 @@ export class PlayerComponent {
 
   togglePlay() {
     this.playerService.togglePlay();
+  }
+
+  setLooping() {
+    this.playerService.setLooping();
+  }
+
+  playNext() {
+    this.playerService.playNext();
+  }
+  playPrevious() {
+    this.playerService.playPrevious();
   }
 }
