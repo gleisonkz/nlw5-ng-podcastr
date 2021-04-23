@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Episode } from 'src/app/models/episode.model';
 import { EpisodeService } from 'src/app/services/episode.service';
 import { PlayerService } from 'src/app/services/player.service';
-import { mapEpisodeToPlayerEpisode } from 'src/app/utils/mapPlayerEpisode';
 
 @Component({
   templateUrl: './home.component.html',
@@ -15,6 +14,7 @@ export class HomePageComponent implements OnInit {
   ) {}
   latestEpisodes: Episode[];
   nextEpisodes: Episode[];
+  private allEpisodes: Episode[];
 
   displayedColumns: string[] = [
     'podcast',
@@ -25,15 +25,15 @@ export class HomePageComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.episodeService.getRecentEpisodes().subscribe((episodes) => {
-      const playerList = mapEpisodeToPlayerEpisode(episodes);
-      this.playerService.setInitialValue(playerList);
+    this.episodeService.getEpisodes().subscribe((episodes) => {
+      this.allEpisodes = [...episodes].reverse();
       this.latestEpisodes = episodes.slice(0, 2);
       this.nextEpisodes = episodes.slice(2);
     });
   }
 
   playAudio(episode: Episode) {
-    this.playerService.play(episode);
+    const index = this.allEpisodes.findIndex((c) => c === episode);
+    this.playerService.playList(index, this.allEpisodes);
   }
 }

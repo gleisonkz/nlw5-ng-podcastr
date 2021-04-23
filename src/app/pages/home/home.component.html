@@ -4,6 +4,7 @@
     <pd-pod-card
       [episode]="episode"
       *ngFor="let episode of latestEpisodes"
+      (playEvent)="playAudio($event)"
     ></pd-pod-card>
   </div>
 
