@@ -1,6 +1,7 @@
 interface Episode {
   id: string;
   title: string;
+  shortTitle: string;
   members: string;
   published_at: Date | string;
   thumbnail: string;

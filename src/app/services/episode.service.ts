@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Episode } from 'src/app/models/episode.model';
 import { IEpisodeService } from 'src/app/services/episode-service-token';
 
@@ -23,8 +24,19 @@ export class EpisodeService implements IEpisodeService {
       _order: 'desc',
     };
 
-    return this.httpClient.get<Episode[]>(`${this.baseURL}/episodes`, {
-      params,
-    });
+    return this.httpClient
+      .get<Episode[]>(`${this.baseURL}/episodes`, {
+        params,
+      })
+      .pipe(
+        map((episodes) => {
+          return episodes.map((c) => {
+            return {
+              ...c,
+              shortTitle: c.title.match(/(Fala[Dd]ev #[0-9]+)/)![0],
+            };
+          });
+        })
+      );
   }
 }

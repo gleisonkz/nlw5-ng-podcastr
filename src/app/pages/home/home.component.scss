@@ -2,14 +2,37 @@
 @import "variables";
 @import "colors";
 @import "mixins";
+@import "media";
 
 .home {
   margin-top: rem(48);
   padding: rem(0 64);
 
+  @include medias($tiny-mobile, $mobile) {
+    margin-top: rem(24);
+    padding: rem(0 32);
+  }
+
   &__last-pods {
     display: flex;
     column-gap: rem(20);
+
+    & > pd-pod-card {
+      @include medias($tiny-mobile, $mobile) {
+        display: none;
+      }
+    }
+
+    mat-tab-group {
+      ::ng-deep .mat-tab-body-wrapper {
+        margin-top: rem(20);
+      }
+
+      display: none;
+      @include medias($tiny-mobile, $mobile) {
+        display: flex;
+      }
+    }
   }
 
   h2,
@@ -35,6 +58,10 @@
       &:first-of-type {
         padding-left: 0;
       }
+
+      &.action {
+        visibility: hidden;
+      }
     }
 
     td {
@@ -55,6 +82,7 @@
 
         a {
           color: $color-secondary-800;
+          min-width: rem(100);
 
           &:hover {
             text-decoration: underline;

@@ -1,4 +1,18 @@
-import { Episode } from 'src/app/models/episode.model';
+interface Episode {
+  id: string;
+  title: string;
+  members: string;
+  published_at: Date | string;
+  thumbnail: string;
+  description: string;
+  file: EpisodeFile;
+}
+
+interface EpisodeFile {
+  url: string;
+  type: string;
+  duration: number;
+}
 
 export const EPISODES: Episode[] = [
   {

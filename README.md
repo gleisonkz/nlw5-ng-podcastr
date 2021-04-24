@@ -22,7 +22,7 @@
     <img alt="Developed by Gleison" src="https://img.shields.io/badge/Developer-Gleison-%3498db?color=3498db&style=for-the-badge&label=Desenvolvedor">
   </a>  
   <img alt="Project License" src="https://img.shields.io/apm/l/vim-mode?style=for-the-badge&label=licen%C3%A7a"/>   
-   <img alt="Project Status" src="https://img.shields.io/badge/concluído-%3498db?color=green&style=for-the-badge&label=Status">  
+   <img alt="Project Status" src="https://img.shields.io/badge/Em Progresso-%3498db?color=yellow&style=for-the-badge&label=Status">  
   
 </p>
 
@@ -171,10 +171,12 @@ $ yarn run json
 | @Output, @Input, e @Inject Decorators |
 |          Template Variables           |
 |      Event and Property Binding       |
-|               Services                |
+|        Observable Data Service        |
 |       Subject, Behavior Subject       |
 |        Custom Injection Token         |
 |          Material Components          |
+|               Resolver                |
+|      HTML Audio Element Handling      |
 
 </div>
 

@@ -9,6 +9,10 @@
   height: 100%;
   width: rem(400);
 
+  @include medias($tiny-mobile, $mobile, $tablet) {
+    width: 100%;
+  }
+
   &__header {
     &__image {
       margin-right: rem(18.67);
@@ -16,11 +20,34 @@
 
     @include flex-center;
     color: white;
+
+    h3 {
+      @include flex-center;
+      margin: 0;
+    }
+  }
+
+  &__back-button {
+    @include flex-center;
+    @include size(48);
+    border-radius: 12px;
+    transition: filter 0.2s;
+    background-color: $color-primary-800;
+    margin-right: rem(20);
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 
   &__preview {
     width: rem(296);
     height: rem(346);
+
+    @include medias($tiny-mobile, $mobile) {
+      height: rem(220);
+    }
+
     margin-top: rem(60);
 
     background-color: red;

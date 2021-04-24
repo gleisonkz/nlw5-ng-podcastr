@@ -19,6 +19,11 @@ $max-size-text: rem(220);
   border-radius: 24px;
   padding: rem(20 20 20 20);
 
+  @include medias($tiny-mobile, $mobile) {
+    max-width: rem(350);
+    align-items: center;
+  }
+
   &__info {
     margin-left: rem(16);
   }
@@ -63,6 +68,10 @@ $max-size-text: rem(220);
     @include size(96);
     border-radius: 16px;
     object-fit: cover;
+
+    @include medias($tiny-mobile, $mobile) {
+      @include size(86);
+    }
   }
 
   &__date {
