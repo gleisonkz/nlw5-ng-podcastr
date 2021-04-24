@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">   
-  <img alt="Top Language" src="https://img.shields.io/github/languages/top/gleisonkz/angular-todo-list?color=3498db&style=for-the-badge">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gleisonkz/angular-todo-list?color=3498db&style=for-the-badge">   
+  <img alt="Top Language" src="https://img.shields.io/github/languages/top/gleisonkz/ng-podcastr?color=3498db&style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gleisonkz/ng-podcastr?color=3498db&style=for-the-badge">   
   <a href="https://github.com/gleisonkz">
     <img alt="Developed by Gleison" src="https://img.shields.io/badge/Developer-Gleison-%3498db?color=3498db&style=for-the-badge">
   </a>  
@@ -36,7 +36,7 @@
 
 <div align="center">
 
-Front-end deployed at [Netlify](https://www.netlify.com/) to see: [Click Here](https://kz-angular-todo-list.netlify.app/)
+Front-end deployed at [Netlify](https://www.netlify.com/) to see: [Click Here](https://ng-podcastr.netlify.app/)
 
 |                             :computer:Desktop                             |                             :iphone: Mobile                              |
 | :-----------------------------------------------------------------------: | :----------------------------------------------------------------------: |
@@ -51,6 +51,7 @@ Front-end deployed at [Netlify](https://www.netlify.com/) to see: [Click Here](h
 <div align="center">
 
 Application built to practice some concepts of my Angular Study's Group.
+This project is my Angular version of the project of the Next Level Week #05 event by [Rocketseat](https://rocketseat.com.br/) 🚀
 
 ---
 
@@ -64,7 +65,7 @@ To run this project you need to clone this repository, have the NOde Package Man
 
 🌐 FrontEnd
 
-Open the command prompt in the project directory at angular-todo-list/front-end, and execute the following commands:
+Open the command prompt in the project directory at ng-podcastr, and execute the following commands:
 
 <details>
   <summary><i>with <b>npm</b></i></summary>
@@ -105,7 +106,7 @@ $ ng serve --open ou ng s -o
 
 🖥 BackEnd
 
-Open the command prompt in the project directory at angular-todo-list/back-end, and execute the following commands:
+Open the command prompt in the project directory at ng-podcastr, and execute the following commands:
 
 <details>
 <summary><i>with <b>npm</b></i></summary>
@@ -125,17 +126,15 @@ $ npm run server
 <summary><i>with <b>yarn</b></i></summary>
 
 ```bash
-# Install dependencies
-$ yarn install
 
 # Start development server
-$ yarn run server
+$ yarn run json
 
 ```
 
 </details>
 
-> ⚠️ The development server will start on port: 3000 - <http://localhost:3000>
+> ⚠️ The development server will start on port: 3000 - <http://localhost:3000/episodes>
 
 </div>
 
@@ -145,14 +144,13 @@ $ yarn run server
 
 <div align="center">
 
-|             :globe_with_meridians: FrontEnd             |                        🖥 BackEnd                         |
-| :-----------------------------------------------------: | :------------------------------------------------------: |
-|            [Angular 11](https://angular.io/)            | [Json-Server](https://www.npmjs.com/package/json-server) |
-|   [Angular Material 11](https://material.angular.io/)   |
-|             [SASS](https://sass-lang.com/)              |
-|   [TypeScript 4.0.2](https://www.typescriptlang.org/)   |
-|      [Rxjs 6.6.0](https://rxjs.dev/guide/overview)      |
-| [NgNeat Hot Toast](https://ngneat.github.io/hot-toast/) |
+|           :globe_with_meridians: FrontEnd           |                        🖥 BackEnd                         |
+| :-------------------------------------------------: | :------------------------------------------------------: |
+|          [Angular 11](https://angular.io/)          | [Json-Server](https://www.npmjs.com/package/json-server) |
+| [Angular Material 11](https://material.angular.io/) |
+|           [SASS](https://sass-lang.com/)            |
+|  [TypeScript 4.1](https://www.typescriptlang.org/)  |
+|    [Rxjs 6.6.0](https://rxjs.dev/guide/overview)    |
 
 </div>
 
@@ -162,16 +160,15 @@ $ yarn run server
 
 <div align="center">
 
-|                  :page_facing_up:                  |
-| :------------------------------------------------: |
-| Decorators @Output, @Input, @ViewChild and @Inject |
-|            Directives *ngFor, *ngSwitch            |
-|                 Template Variables                 |
-|             Event and Property Binding             |
-|                   Reactive Forms                   |
-|                      Services                      |
-|                  Injection Token                   |
-|                Material Components                 |
+|           :page_facing_up:            |
+| :-----------------------------------: |
+| @Output, @Input, e @Inject Decorators |
+|          Template Variables           |
+|      Event and Property Binding       |
+|               Services                |
+|       Subject, Behavior Subject       |
+|        Custom Injection Token         |
+|          Material Components          |
 
 </div>
 
@@ -181,15 +178,14 @@ $ yarn run server
 
 <div align="center">
 
-|                 :page_facing_up:                 |
-| :----------------------------------------------: |
-|                  Search by name                  |
-|                 CRUD operations                  |
-|                 Filter by status                 |
-| Local Storage Service for production environment |
-|                Responsive layout                 |
-|            Custom Error State Matcher            |
-|       Custom Directive for keyboard events       |
+|           :page_facing_up:           |
+| :----------------------------------: |
+| Play, Next, Pause, Shuffle, Looping  |
+| Local Storage Service for production |
+|          Responsive Layout           |
+|              Dark Theme              |
+|      Custom Error State Matcher      |
+|           Hour Custom Pipe           |
 
 </div>
 
