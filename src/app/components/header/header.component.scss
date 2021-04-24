@@ -1,14 +1,35 @@
 @import "functions";
 @import "colors";
+@import "media";
 
 .logo {
   margin-right: rem(33.18);
+
+  @include medias($tiny-mobile, $mobile) {
+    width: 120px;
+    margin-right: 0;
+  }
+
+  &--angular {
+    @include medias($tiny-mobile, $mobile) {
+      display: none;
+    }
+  }
 }
 
 .text {
-  font-size: 14px;
-  line-height: 17px;
+  font-size: rem(14);
+  line-height: rem(17);
   align-self: center;
+
+  @include medias($tiny-mobile, $mobile) {
+    margin-top: rem(10);
+    font-size: rem(12);
+  }
+
+  @include medias($tiny-mobile, $mobile) {
+    display: none;
+  }
 }
 
 mat-toolbar {
@@ -17,14 +38,33 @@ mat-toolbar {
   padding: rem(32 64);
   justify-content: space-between;
 
+  @include medias($tiny-mobile, $mobile) {
+    padding: rem(20 32);
+  }
+
+  .menu-button {
+    display: none;
+    @include medias($tiny-mobile, $mobile) {
+      display: inline-block;
+    }
+  }
+
   div {
     display: flex;
     justify-content: center;
+
+    @include medias($tiny-mobile, $mobile) {
+      flex-direction: column;
+    }
   }
 
   mat-divider {
     height: rem(24);
     align-self: center;
     margin-right: rem(32);
+
+    @include medias($tiny-mobile, $mobile) {
+      display: none;
+    }
   }
 }

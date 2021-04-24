@@ -2,7 +2,7 @@
   <div>
     <img
       width="50"
-      class="logo"
+      class="logo logo--angular"
       src="../../../assets/icons/angular_logo.svg"
       alt="Angular Logo"
     />
@@ -15,5 +15,8 @@
     <span class="text">O melhor para você ouvir sempre</span>
   </div>
 
-  <span class="text">{{ currentDate | date: "E d MMMM " }}</span>
+  <button (click)="openSide.emit()" mat-button class="menu-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="text text--date">{{ currentDate | date: "E d MMMM " }}</span>
 </mat-toolbar>
