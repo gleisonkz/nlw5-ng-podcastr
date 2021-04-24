@@ -169,6 +169,7 @@ $ yarn run json
 |       Subject, Behavior Subject       |
 |        Custom Injection Token         |
 |          Material Components          |
+|      HTML Audio Element Handling      |
 
 </div>
 

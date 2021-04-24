@@ -176,6 +176,7 @@ $ yarn run json
 |        Custom Injection Token         |
 |          Material Components          |
 |               Resolver                |
+|      HTML Audio Element Handling      |
 
 </div>
 
