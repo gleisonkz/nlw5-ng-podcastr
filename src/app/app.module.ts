@@ -13,6 +13,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  EPISODE_SERVICE_TOKEN,
+  tokenServiceFactory,
+} from 'src/app/services/episode-service-token';
+import { EpisodeStorageService } from 'src/app/services/episode-storage.service';
+import { EpisodeService } from 'src/app/services/episode.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -49,7 +55,14 @@ registerLocaleData(ptBr);
     HttpClientModule,
     MatTableModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    {
+      provide: EPISODE_SERVICE_TOKEN,
+      useFactory: tokenServiceFactory,
+      deps: [EpisodeStorageService, EpisodeService],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
