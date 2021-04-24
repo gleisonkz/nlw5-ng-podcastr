@@ -1,12 +1,18 @@
 <div class="player">
-  <h3 class="player__header">
-    <img
-      class="player__header__image"
-      src="../../../assets/icons/playing.svg"
-      alt="Playing Icon"
-    />
-    <span class="player__header__text">Tocando agora</span>
-  </h3>
+  <div class="player__header">
+    <button fxHide.gt-xs (click)="closeSide.emit()" class="player__back-button">
+      <img src="../../../assets/icons/arrow-left.svg" alt="Play Button Icon" />
+    </button>
+
+    <h3>
+      <img
+        class="player__header__image"
+        src="../../../assets/icons/playing.svg"
+        alt="Playing Icon"
+      />
+      <span class="player__header__text">Tocando agora</span>
+    </h3>
+  </div>
 
   <div class="player__preview">
     <img
