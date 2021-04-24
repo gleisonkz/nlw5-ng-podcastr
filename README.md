@@ -171,10 +171,11 @@ $ yarn run json
 | @Output, @Input, e @Inject Decorators |
 |          Template Variables           |
 |      Event and Property Binding       |
-|               Services                |
+|        Observable Data Service        |
 |       Subject, Behavior Subject       |
 |        Custom Injection Token         |
 |          Material Components          |
+|               Resolver                |
 
 </div>
 

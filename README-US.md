@@ -178,14 +178,16 @@ $ yarn run json
 
 <div align="center">
 
-|           :page_facing_up:           |
-| :----------------------------------: |
-| Play, Next, Pause, Shuffle, Looping  |
-| Local Storage Service for production |
-|          Responsive Layout           |
-|              Dark Theme              |
-|      Custom Error State Matcher      |
-|           Hour Custom Pipe           |
+|           :page_facing_up:            |
+| :-----------------------------------: |
+| @Output, @Input, e @Inject Decorators |
+|          Template Variables           |
+|      Event and Property Binding       |
+|        Observable Data Service        |
+|       Subject, Behavior Subject       |
+|        Custom Injection Token         |
+|          Material Components          |
+|               Resolver                |
 
 </div>
 
