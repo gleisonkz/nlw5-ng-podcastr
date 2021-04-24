@@ -1,5 +1,6 @@
 @import "functions";
 @import "variables";
+@import "media";
 
 @mixin flex-center($direction: row) {
   display: flex;
@@ -97,9 +98,19 @@
   @include base-title;
   font-size: rem(24);
   line-height: rem(30);
+
+  @include medias($tiny-mobile, $mobile) {
+    font-size: rem(19);
+    line-height: rem(25);
+  }
 }
 @mixin large-title {
   @include base-title;
   font-size: rem(32);
   line-height: rem(40);
+
+  @include medias($tiny-mobile, $mobile) {
+    font-size: rem(25);
+    line-height: rem(25);
+  }
 }
