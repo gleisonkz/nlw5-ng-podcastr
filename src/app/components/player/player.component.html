@@ -1,4 +1,7 @@
-<div class="player">
+<div
+  class="player"
+  *ngIf="{ currentEpisode: playerService.currentEpisode$ | async } as context"
+>
   <div class="player__header">
     <button fxHide.gt-xs (click)="closeSide.emit()" class="player__back-button">
       <img src="../../../assets/icons/arrow-left.svg" alt="Play Button Icon" />
@@ -16,9 +19,9 @@
 
   <div class="player__preview">
     <img
-      *ngIf="currentEpisode$ | async as currentEpisode; else noPodcast"
+      *ngIf="context.currentEpisode; else noPodcast"
       class="player__preview__image"
-      [src]="currentEpisode?.thumbnail"
+      [src]="context.currentEpisode?.thumbnail"
       alt=""
     />
 
@@ -29,35 +32,46 @@
     </ng-template>
   </div>
 
-  <div
-    *ngIf="currentEpisode$ | async as currentEpisode"
-    class="player__details"
-  >
-    <h1 class="player__details__title">{{ currentEpisode.title }}</h1>
-    <p class="player__details__members">{{ currentEpisode.members }}</p>
+  <div *ngIf="context.currentEpisode" class="player__details">
+    <h1 class="player__details__title">{{ context.currentEpisode.title }}</h1>
+    <p class="player__details__members">{{ context.currentEpisode.members }}</p>
   </div>
 
   <div class="player__actions">
-    <div class="player__actions__progress">
-      <span>{{ timeElapsed$ | async | hour }}</span>
+    <div
+      *ngIf="{
+        currentDuration: currentDuration$ | async,
+        timeElapsed: timeElapsed$ | async
+      } as timeContext"
+      class="player__actions__progress"
+    >
+      <span>{{ timeContext.timeElapsed | hour }}</span>
       <mat-slider
-        [disabled]="!(currentEpisode$ | async)"
+        [disabled]="!context.currentEpisode"
         (input)="sliderThumbChange($event)"
         #slider
-        [max]="currentDuration$ | async"
-        [value]="timeElapsed$ | async"
+        [max]="timeContext.currentDuration"
+        [value]="timeContext.timeElapsed"
         step="0.1"
       ></mat-slider>
-      <span>{{ currentDuration$ | async | hour }}</span>
+      <span>{{ timeContext.currentDuration | hour }}</span>
     </div>
 
-    <div class="player__buttons">
-      <button [disabled]="!(hasNext$ | async)" mat-icon-button>
+    <div
+      class="player__buttons"
+      *ngIf="{
+        hasNext: playerService.hasNext$ | async,
+        hasPrevious: playerService.hasPrevious$ | async,
+        isPlaying: playerService.isPlaying$ | async,
+        isLooping: playerService.isLooping$ | async
+      } as playerContext"
+    >
+      <button [disabled]="!playerContext.hasNext" mat-icon-button>
         <img src="../../../assets/icons/shuffle.svg" alt="Shuffle Button" />
       </button>
       <button
         (click)="playPrevious()"
-        [disabled]="!(hasPrevious$ | async)"
+        [disabled]="!playerContext.hasPrevious"
         mat-icon-button
       >
         <img
@@ -66,14 +80,14 @@
         />
       </button>
       <button
-        [disabled]="!(currentEpisode$ | async)"
-        [ngClass]="{ playing: isPlaying$ | async }"
+        [disabled]="!context.currentEpisode"
+        [ngClass]="{ playing: playerContext.isPlaying }"
         (click)="togglePlay()"
         mat-icon-button
         class="play-pause"
       >
         <img
-          *ngIf="isPlaying$ | async; else pause"
+          *ngIf="playerContext.isPlaying; else pause"
           src="../../../assets/icons/pause.svg"
           alt="Pause Button"
         />
@@ -83,14 +97,14 @@
       </button>
       <button
         (click)="playNext()"
-        [disabled]="!(hasNext$ | async)"
+        [disabled]="!playerContext.hasNext"
         mat-icon-button
       >
         <img src="../../../assets/icons/play-next.svg" alt="Next Button" />
       </button>
       <button
-        [class.active]="isLooping$ | async"
-        [disabled]="!(currentEpisode$ | async)"
+        [class.active]="playerContext.isLooping"
+        [disabled]="!context.currentEpisode"
         (click)="setLooping()"
         mat-icon-button
       >

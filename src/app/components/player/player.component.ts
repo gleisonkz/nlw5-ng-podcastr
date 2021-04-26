@@ -17,7 +17,7 @@ export class PlayerComponent {
   isLooping$ = this.playerService.isLooping$;
   @Output() closeSide = new EventEmitter<void>();
 
-  constructor(private playerService: PlayerService) {}
+  constructor(public playerService: PlayerService) {}
 
   sliderThumbChange(event: MatSliderChange) {
     if (!event.value) return;
