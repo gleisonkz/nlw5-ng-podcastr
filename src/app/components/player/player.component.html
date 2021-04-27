@@ -40,8 +40,8 @@
   <div class="player__actions">
     <div
       *ngIf="{
-        currentDuration: currentDuration$ | async,
-        timeElapsed: timeElapsed$ | async
+        currentDuration: playerService.duration$ | async,
+        timeElapsed: playerService.timeElapsed$ | async
       } as timeContext"
       class="player__actions__progress"
     >
@@ -63,10 +63,16 @@
         hasNext: playerService.hasNext$ | async,
         hasPrevious: playerService.hasPrevious$ | async,
         isPlaying: playerService.isPlaying$ | async,
-        isLooping: playerService.isLooping$ | async
+        isLooping: playerService.isLooping$ | async,
+        isShuffling: playerService.isShuffling$ | async
       } as playerContext"
     >
-      <button [disabled]="!playerContext.hasNext" mat-icon-button>
+      <button
+        [class.active]="playerContext.isShuffling"
+        (click)="setShuffling()"
+        [disabled]="!playerContext.hasNext"
+        mat-icon-button
+      >
         <img src="../../../assets/icons/shuffle.svg" alt="Shuffle Button" />
       </button>
       <button

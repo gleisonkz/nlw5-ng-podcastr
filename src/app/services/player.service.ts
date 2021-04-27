@@ -18,6 +18,7 @@ export class PlayerService {
   private currentEpisode$$ = new Subject<PlayerEpisode>();
   private isPlaying$$ = new BehaviorSubject<boolean>(false);
   private isLooping$$ = new BehaviorSubject<boolean>(false);
+  private isShuffling$$ = new BehaviorSubject<boolean>(false);
   private hasPrevious$$ = new BehaviorSubject<boolean>(false);
   private hasNext$$ = new BehaviorSubject<boolean>(false);
   private timeElapsed$$ = new BehaviorSubject<number>(0);
@@ -39,10 +40,19 @@ export class PlayerService {
     return this.isLooping$$.value;
   }
 
+  private set isShuffling(value: boolean) {
+    this.isShuffling$$.next(value);
+  }
+
+  private get isShuffling(): boolean {
+    return this.isShuffling$$.value;
+  }
+
   public episodes$ = this.episodes$$.asObservable();
   public currentEpisode$ = this.currentEpisode$$.asObservable();
   public isPlaying$ = this.isPlaying$$.asObservable();
   public isLooping$ = this.isLooping$$.asObservable();
+  public isShuffling$ = this.isShuffling$$.asObservable();
   public timeElapsed$ = this.timeElapsed$$.asObservable();
   public duration$ = this.duration$$.asObservable();
   public hasPrevious$ = this.hasPrevious$$.asObservable();
@@ -112,6 +122,10 @@ export class PlayerService {
     this.isLooping = loopState;
   }
 
+  setShuffling() {
+    this.isShuffling = !this.isShuffling;
+  }
+
   play(episode: Episode) {
     const playerEpisode = mapEpisodeToPlayerEpisode(episode);
     const { duration } = episode.file;
@@ -134,6 +148,13 @@ export class PlayerService {
   }
 
   playNext(): void {
+    if (this.isShuffling) {
+      const nextEpisodeIndex = Math.floor(
+        Math.random() * this.episodesList.length
+      );
+      this.setCurrentEpisodeIndex(nextEpisodeIndex);
+    }
+
     this.setCurrentEpisodeIndex(this.currentEpisodeIndex + 1);
   }
   playPrevious(): void {
@@ -145,7 +166,7 @@ export class PlayerService {
     this.currentEpisodeIndex = newIndex;
 
     const hasPrevious = newIndex > 0;
-    const hasNext = newIndex + 1 < this.episodesList.length;
+    const hasNext = this.isShuffling || newIndex + 1 < this.episodesList.length;
 
     this.play(episode);
 

@@ -8,13 +8,6 @@ import { PlayerService } from 'src/app/services/player.service';
   styleUrls: ['./player.component.scss'],
 })
 export class PlayerComponent {
-  currentEpisode$ = this.playerService.currentEpisode$;
-  isPlaying$ = this.playerService.isPlaying$;
-  timeElapsed$ = this.playerService.timeElapsed$;
-  currentDuration$ = this.playerService.duration$;
-  hasPrevious$ = this.playerService.hasPrevious$;
-  hasNext$ = this.playerService.hasNext$;
-  isLooping$ = this.playerService.isLooping$;
   @Output() closeSide = new EventEmitter<void>();
 
   constructor(public playerService: PlayerService) {}
@@ -30,6 +23,10 @@ export class PlayerComponent {
 
   setLooping() {
     this.playerService.setLooping();
+  }
+
+  setShuffling() {
+    this.playerService.setShuffling();
   }
 
   playNext() {
