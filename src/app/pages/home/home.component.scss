@@ -48,6 +48,9 @@
     background-color: $color-background;
     width: 100%;
 
+    tr {
+    }
+
     th {
       font-family: Lexend;
       font-style: normal;
@@ -66,6 +69,7 @@
 
     td {
       padding: rem(10 0);
+      min-height: rem(53);
 
       &.data {
         min-width: rem(75);
@@ -94,6 +98,10 @@
           border-radius: rem(8);
           object-fit: cover;
           margin-right: rem(10);
+
+          @media screen and (max-width: 376px) {
+            display: none;
+          }
         }
       }
     }
@@ -110,5 +118,8 @@
     &:hover {
       filter: brightness(0.9);
     }
+  }
+
+  .thumbnail {
   }
 }

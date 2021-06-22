@@ -4,13 +4,13 @@
 >
   <div class="player__header">
     <button fxHide.gt-xs (click)="closeSide.emit()" class="player__back-button">
-      <img src="../../../assets/icons/arrow-left.svg" alt="Play Button Icon" />
+      <img src="assets/icons/arrow-left.svg" alt="Play Button Icon" />
     </button>
 
     <h3>
       <img
         class="player__header__image"
-        src="../../../assets/icons/playing.svg"
+        src="assets/icons/playing.svg"
         alt="Playing Icon"
       />
       <span class="player__header__text">Tocando agora</span>
@@ -73,17 +73,14 @@
         [disabled]="!playerContext.hasNext"
         mat-icon-button
       >
-        <img src="../../../assets/icons/shuffle.svg" alt="Shuffle Button" />
+        <img src="assets/icons/shuffle.svg" alt="Shuffle Button" />
       </button>
       <button
         (click)="playPrevious()"
         [disabled]="!playerContext.hasPrevious"
         mat-icon-button
       >
-        <img
-          src="../../../assets/icons/play-previous.svg"
-          alt="Previous Button"
-        />
+        <img src="assets/icons/play-previous.svg" alt="Previous Button" />
       </button>
       <button
         [disabled]="!context.currentEpisode"
@@ -94,11 +91,11 @@
       >
         <img
           *ngIf="playerContext.isPlaying; else pause"
-          src="../../../assets/icons/pause.svg"
+          src="assets/icons/pause.svg"
           alt="Pause Button"
         />
         <ng-template #pause>
-          <img src="../../../assets/icons/play.svg" alt="Play Button" />
+          <img src="assets/icons/play.svg" alt="Play Button" />
         </ng-template>
       </button>
       <button
@@ -106,7 +103,7 @@
         [disabled]="!playerContext.hasNext"
         mat-icon-button
       >
-        <img src="../../../assets/icons/play-next.svg" alt="Next Button" />
+        <img src="assets/icons/play-next.svg" alt="Next Button" />
       </button>
       <button
         [class.active]="playerContext.isLooping"
@@ -114,7 +111,7 @@
         (click)="setLooping()"
         mat-icon-button
       >
-        <img src="../../../assets/icons/repeat.svg" alt="Repeat Button" />
+        <img src="assets/icons/repeat.svg" alt="Repeat Button" />
       </button>
     </div>
   </div>

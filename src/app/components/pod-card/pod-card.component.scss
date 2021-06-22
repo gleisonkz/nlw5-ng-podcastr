@@ -13,7 +13,7 @@ $max-size-text: rem(220);
   display: flex;
   width: 100%;
   max-width: rem(432);
-  height: rem(140);
+  // height: rem(140);
   background-color: #ffffff;
   border: 1px solid #e6e8eb;
   border-radius: 24px;
@@ -35,11 +35,6 @@ $max-size-text: rem(220);
     color: $color-secondary-800;
 
     margin: rem(10 0);
-
-    max-width: $max-size-text;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 
     &:hover {
       text-decoration: underline;

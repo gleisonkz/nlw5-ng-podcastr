@@ -25,7 +25,11 @@
     <ng-container matColumnDef="podcast">
       <th mat-header-cell *matHeaderCellDef>PODCAST</th>
       <td class="podcast" mat-cell *matCellDef="let element">
-        <img [src]="element.thumbnail" alt="Thumbnail do Episódio" />
+        <img
+          class="thumbnail"
+          [src]="element.thumbnail"
+          alt="Thumbnail do Episódio"
+        />
         <a class="link" [routerLink]="['episode', element.id]">{{
           element.shortTitle
         }}</a>
@@ -57,10 +61,7 @@
       <th class="action" mat-header-cell *matHeaderCellDef>TOCAR</th>
       <td mat-cell *matCellDef="let element">
         <button class="play-button" (click)="playAudio(element)">
-          <img
-            src="../../../assets/icons/play-green.svg"
-            alt="Play Button Icon"
-          />
+          <img src="assets/icons/play-green.svg" alt="Play Button Icon" />
         </button>
       </td>
     </ng-container>
