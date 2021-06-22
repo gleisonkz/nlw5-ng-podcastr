@@ -114,3 +114,48 @@
     line-height: rem(25);
   }
 }
+
+@mixin clamp(
+  $property,
+  $min-size,
+  $scaler,
+  $max-size,
+  $min-size-left: false,
+  $scaler-left: false,
+  $max-size-left: false
+) {
+  @if $min-size-left == false {
+    // Set MAX values
+    #{$property}: $max-size;
+    #{$property}: #{"min(max(#{$min-size}, #{$scaler}), #{$max-size}) "};
+    #{$property}: clamp(#{$min-size}, #{$scaler}, #{$max-size});
+  } @else if $min-size-left == 0 or $min-size-left == auto {
+    // Set MAX values
+    #{$property}: $max-size $max-size-left;
+    #{$property}: #{“min(max(#{$min-size}, #{$scaler}), #{$max-size})
+      ”}
+      $min-size-left;
+    #{$property}: clamp(#{$min-size}, #{$scaler}, #{$max-size}) $min-size-left;
+  } @else {
+    // Set MAX values
+    #{$property}: $max-size $max-size-left;
+    #{$property}: #{“min(max(#{$min-size}, #{$scaler}), #{$max-size})
+      ”}
+      #{“min(max(#{$min-size-left}, #{$scaler-left}), #{$max-size-left})
+      ”};
+    // add second CLAMP and #{} to SASS variables
+    #{$property}: clamp(#{$min-size}, #{$scaler}, #{$max-size})
+      clamp(#{$min-size-left}, #{$scaler-left}, #{$max-size-left});
+  }
+}
+
+@mixin clamp-size(
+  $min-width,
+  $scale,
+  $max-width,
+  $min-height: $min-width,
+  $max-height: $max-width
+) {
+  @include clamp(width, rem($min-width), $scale, rem($max-width));
+  @include clamp(height, rem($min-height), $scale, rem($max-height));
+}
