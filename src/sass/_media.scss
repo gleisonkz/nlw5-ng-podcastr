@@ -1,16 +1,45 @@
+$large-desktop: "large-desktop";
 $desktop: "desktop";
-$large-tablet: "large-tablet";
+$laptop: "laptop";
 $tablet: "tablet";
-$small-tablet: "small-tablet";
 $mobile: "mobile";
 $tiny-mobile: "tiny-mobile";
 
-$media-desktop: 1200;
-$media-large-tablet: 991;
-$media-tablet: 767;
-$media-small-tablet: 720;
-$media-mobile: 479;
-$media-tiny-mobile: 445;
+$media-desktop: 1400;
+$media-laptop: 1270;
+$media-tablet: 768;
+$media-mobile: 480;
+$media-tiny-mobile: 420;
+
+@mixin gt-mobile {
+  @media screen and (min-width: $media-mobile * 1px + 1) {
+    @content;
+  }
+}
+
+@mixin gt-tablet {
+  @media screen and (min-width: $media-tablet * 1px + 1) {
+    @content;
+  }
+}
+
+@mixin gt-laptop {
+  @media screen and (min-width: $media-laptop * 1px + 1) {
+    @content;
+  }
+}
+
+@mixin lt-tablet {
+  @media screen and (max-width: $media-tablet * 1px - 1) {
+    @content;
+  }
+}
+
+@mixin lt-desktop {
+  @media screen and (max-width: $media-desktop * 1px - 1) {
+    @content;
+  }
+}
 
 @mixin tiny-mobile {
   @media screen and (max-width: $media-tiny-mobile * 1px) {
@@ -24,26 +53,26 @@ $media-tiny-mobile: 445;
   }
 }
 
-@mixin small-tablet {
-  @media screen and (min-width: $media-mobile * 1px + 1) and (max-width: $media-small-tablet * 1px) {
-    @content;
-  }
-}
-
 @mixin tablet {
-  @media screen and (min-width: $media-small-tablet * 1px + 1) and (max-width: $media-tablet * 1px) {
+  @media screen and (min-width: $media-mobile * 1px + 1) and (max-width: $media-tablet * 1px) {
     @content;
   }
 }
 
-@mixin large-tablet {
-  @media screen and (min-width: $media-tablet * 1px + 1) and (max-width: $media-large-tablet * 1px) {
+@mixin laptop {
+  @media screen and (min-width: $media-tablet * 1px + 1) and (max-width: $media-laptop * 1px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: $media-large-tablet * 1px + 1) {
+  @media screen and (min-width: $media-laptop * 1px + 1) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: $media-desktop * 1px + 1) {
     @content;
   }
 }
@@ -60,23 +89,23 @@ $media-tiny-mobile: 445;
         @content;
       }
     }
-    @if $size == "small-tablet" {
-      @include small-tablet() {
-        @content;
-      }
-    }
     @if $size == "tablet" {
       @include tablet() {
         @content;
       }
     }
-    @if $size == "large-tablet" {
-      @include large-tablet() {
+    @if $size == "laptop" {
+      @include laptop() {
         @content;
       }
     }
     @if $size == "desktop" {
       @include desktop() {
+        @content;
+      }
+    }
+    @if $size == "large-desktop" {
+      @include large-desktop() {
         @content;
       }
     }
