@@ -1,4 +1,4 @@
-import { registerLocaleData } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import ptBr from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -28,6 +28,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { PodCardComponent } from './components/pod-card/pod-card.component';
 import { EpisodeDetailPageComponent } from './pages/episode-detail/episode-detail.component';
 import { HomePageComponent } from './pages/home/home.component';
+import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { HourPipe } from './pipes/hour.pipe';
 
 registerLocaleData(ptBr);
@@ -41,6 +42,7 @@ registerLocaleData(ptBr);
     HomePageComponent,
     EpisodeDetailPageComponent,
     HourPipe,
+    CustomDatePipe,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,7 @@ registerLocaleData(ptBr);
       useFactory: tokenServiceFactory,
       deps: [EpisodeStorageService, EpisodeService],
     },
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })

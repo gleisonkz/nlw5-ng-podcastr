@@ -1,11 +1,35 @@
 @import "functions";
 @import "colors";
+@import "media";
 
-mat-sidenav-container {
-  height: 100%;
+:host {
+  display: flex;
+
+  @include lt-desktop {
+    flex-direction: column;
+  }
 }
 
-mat-sidenav {
-  min-width: rem(424);
+main {
+  overflow-y: auto;
+  height: 100vh;
+  flex: 1;
+  background-color: $color-background;
+
+  @include lt-desktop {
+    margin-bottom: 8rem;
+  }
+}
+
+aside {
   background-color: $color-primary-500;
+
+  @include lt-desktop {
+    width: 100%;
+    height: rem(112);
+    flex-direction: row;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+  }
 }
