@@ -2,7 +2,6 @@
 @import "mixins";
 @import "colors";
 @import "media";
-@import "custom-theme";
 
 @include reset-css;
 
@@ -15,6 +14,16 @@ button {
 
 button {
   cursor: pointer;
+}
+
+h1,
+h2 {
+  @include clamp(font-size, rem(12), 3vw, rem(24));
+  @include clamp(line-height, rem(18), 3vw, rem(30));
+  font-family: $font-secondary;
+  font-weight: 600;
+  margin: rem(0 0 16);
+  color: $color-title-on-background;
 }
 
 :root {
