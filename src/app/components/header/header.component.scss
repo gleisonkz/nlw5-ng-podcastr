@@ -1,6 +1,8 @@
 @import "functions";
 @import "colors";
 @import "media";
+@import "variables";
+@import "mixins";
 
 .logo {
   margin-right: rem(33.18);
@@ -21,14 +23,16 @@
   font-size: rem(14);
   line-height: rem(17);
   align-self: center;
+  @include clamp(font-size, rem(12), 3vw, rem(16));
+  @include clamp(line-height, rem(12), 3vw, rem(17));
+  font-family: $font-primary;
+  font-weight: 500;
+  color: $color-text-on-surface;
 
-  @include medias($tiny-mobile, $mobile) {
-    margin-top: rem(10);
-    font-size: rem(12);
-  }
-
-  @include medias($tiny-mobile, $mobile) {
-    display: none;
+  &.date {
+    @media screen and (max-width: 830px) {
+      display: none;
+    }
   }
 }
 
@@ -42,20 +46,9 @@ mat-toolbar {
     padding: rem(20 32);
   }
 
-  .menu-button {
-    display: none;
-    @include medias($tiny-mobile, $mobile) {
-      display: inline-block;
-    }
-  }
-
   div {
     display: flex;
     justify-content: center;
-
-    @include medias($tiny-mobile, $mobile) {
-      flex-direction: column;
-    }
   }
 
   mat-divider {

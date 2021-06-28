@@ -7,12 +7,10 @@
       alt="Angular Logo"
     />
     <img class="logo" src="assets/icons/logo.svg" alt="Podcastr Logo" />
+
     <mat-divider [vertical]="true"></mat-divider>
     <span class="text">O melhor para você ouvir sempre</span>
   </div>
 
-  <button (click)="openSide.emit()" mat-button class="menu-button">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="text text--date">{{ currentDate | date: "E d MMMM " }}</span>
+  <span class="text date">{{ currentDate | customDate }}</span>
 </mat-toolbar>
