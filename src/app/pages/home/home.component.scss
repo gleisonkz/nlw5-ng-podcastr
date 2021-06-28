@@ -35,21 +35,9 @@
     }
   }
 
-  h2,
-  h3 {
-    @include medium-title;
-  }
-
-  h3 {
-    margin-top: rem(48);
-  }
-
   table {
     background-color: $color-background;
     width: 100%;
-
-    tr {
-    }
 
     th {
       font-family: Lexend;
@@ -118,8 +106,5 @@
     &:hover {
       filter: brightness(0.9);
     }
-  }
-
-  .thumbnail {
   }
 }
