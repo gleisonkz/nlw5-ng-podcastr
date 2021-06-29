@@ -14,24 +14,14 @@
   }
 
   &__last-pods {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     column-gap: rem(20);
+    margin-bottom: rem(20);
 
-    & > pd-pod-card {
-      @include medias($tiny-mobile, $mobile) {
-        display: none;
-      }
-    }
-
-    mat-tab-group {
-      ::ng-deep .mat-tab-body-wrapper {
-        margin-top: rem(20);
-      }
-
-      display: none;
-      @include medias($tiny-mobile, $mobile) {
-        display: flex;
-      }
+    @media screen and (max-width: 1512px) {
+      grid-template-columns: 1fr;
+      row-gap: rem(20);
     }
   }
 
