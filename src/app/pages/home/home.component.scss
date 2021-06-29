@@ -8,9 +8,13 @@
   margin-top: rem(48);
   padding: rem(0 64);
 
-  @include medias($tiny-mobile, $mobile) {
+  @include mobile {
     margin-top: rem(24);
     padding: rem(0 32);
+  }
+
+  @include tiny-mobile {
+    padding: rem(0 15);
   }
 
   &__last-pods {
@@ -30,37 +34,44 @@
     width: 100%;
 
     th {
-      font-family: Lexend;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 15px;
+      font-family: $font-secondary;
+      color: $color-table-head;
+
+      @include clamp(font-size, rem(10), 3vw, rem(12));
+      @include clamp(line-height, rem(12), 3vw, rem(15));
 
       &:first-of-type {
         padding-left: 0;
       }
 
       &.action {
-        visibility: hidden;
+        @media screen and (max-width: 1050px) {
+          color: transparent;
+        }
       }
     }
 
     td {
       padding: rem(10 0);
       min-height: rem(53);
+      font-family: $font-primary;
+      color: $color-text-on-surface;
+
+      @include clamp(font-size, rem(12), 3vw, rem(14));
+      @include clamp(line-height, rem(15), 3vw, rem(17));
 
       &.data {
         min-width: rem(75);
       }
 
       &.podcast {
+        display: flex;
+        align-items: center;
+
         font-family: Lexend;
-        font-style: normal;
         font-weight: 600;
         font-size: 13.5px;
         line-height: 20px;
-        display: flex;
-        align-items: center;
 
         a {
           color: $color-secondary-800;
@@ -92,6 +103,10 @@
     border: 1px solid $color-secondary-100;
     border-radius: rem(10);
     transition: filter 0.2s;
+
+    @media screen and (max-width: 1050px) {
+      margin-left: 20%;
+    }
 
     &:hover {
       filter: brightness(0.9);

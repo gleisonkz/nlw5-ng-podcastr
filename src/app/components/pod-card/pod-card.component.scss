@@ -66,6 +66,7 @@ $max-size-text: rem(220);
   }
 
   &__date-duration {
+    margin-top: rem(5);
     display: flex;
   }
 
@@ -79,7 +80,7 @@ $max-size-text: rem(220);
     }
 
     @media screen and (max-width: 390px) {
-      @include size(60);
+      display: none;
     }
   }
 

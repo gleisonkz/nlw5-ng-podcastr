@@ -9,6 +9,8 @@ $color-secondary-200: #{"var(--color-secondary-200)"};
 $color-secondary-500: #{"var(--color-secondary-500)"};
 $color-secondary-800: #{"var(--color-secondary-800)"};
 
+$color-table-head: #{"var(--color-table-head)"};
+
 $color-text-on-background: #{"var(--color-text-on-background)"};
 $color-text-on-surface: #{"var(--color-text-on-surface)"};
 $color-text-on-primary: #{"var(--color-text-on-primary)"};
@@ -52,6 +54,7 @@ $project-colors: (
   "danger": #cf6679,
   "background": #f7f8fa,
   "surface": #ffffff,
+  "table-head": #aba8b3,
 );
 
 $project-colors-theme-dark: (
@@ -78,4 +81,5 @@ $project-colors-theme-dark: (
   "danger": #cf6679,
   "background": #e5e5e5,
   "surface": #ffffff,
+  "table-head": #aba8b3,
 );
