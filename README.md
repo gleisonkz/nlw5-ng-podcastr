@@ -57,7 +57,7 @@ Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visuali
 
 <div align="center">
 
-Minha versão da aplicação proposta pela Next Level Week #05 da [Rocketseat](https://rocketseat.com.br/) 🚀
+Minha versão da aplicação proposta pela Next Level Week #05 da [Rocketseat](https://rocketseat.com.br/) 🚀 utilizando o Angular.
 
 ---
 
@@ -110,9 +110,9 @@ $ ng serve --open ou ng s -o
 
 ---
 
-🖥 BackEnd
+🖥 BackEnd (<small>json-server</small>)
 
-Abra o prompt de comando no diretório do projeto na pasta ng-podcastr, está é a pasta onde esta localizado o db.json, e execute os seguintes códigos:
+Abra o prompt de comando no diretório do projeto na pasta <code>ng-podcastr</code>, está é a pasta onde esta localizado o <code>db.json</code>, e execute os seguintes códigos:
 
 <details>
 <summary><i>com <b>npm</b></i></summary>
@@ -150,13 +150,14 @@ $ yarn run json
 
 <div align="center">
 
-|           :globe_with_meridians: FrontEnd           |                        🖥 BackEnd                         |
-| :-------------------------------------------------: | :------------------------------------------------------: |
-|          [Angular 11](https://angular.io/)          | [Json-Server](https://www.npmjs.com/package/json-server) |
-| [Angular Material 11](https://material.angular.io/) |
-|           [SASS](https://sass-lang.com/)            |
-|  [TypeScript 4.1](https://www.typescriptlang.org/)  |
-|    [Rxjs 6.6.0](https://rxjs.dev/guide/overview)    |
+|                  :globe_with_meridians: FrontEnd                  |                        🖥 BackEnd                         |
+| :---------------------------------------------------------------: | :------------------------------------------------------: |
+|                 [Angular 11](https://angular.io/)                 | [Json-Server](https://www.npmjs.com/package/json-server) |
+|        [Angular Material 11](https://material.angular.io/)        |
+|                  [SASS](https://sass-lang.com/)                   |
+|         [TypeScript 4.1](https://www.typescriptlang.org/)         |
+|           [Rxjs 6.6.0](https://rxjs.dev/guide/overview)           |
+| [Concurrently" 6.0.2](https://www.npmjs.com/package/concurrently) |
 
 </div>
 

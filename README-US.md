@@ -51,7 +51,7 @@ Front-end deployed at [Netlify](https://www.netlify.com/) to see: [Click Here](h
 <div align="center">
 
 Application built to practice some concepts of my Angular Study's Group.
-This project is my Angular version of the project of the Next Level Week #05 event by [Rocketseat](https://rocketseat.com.br/) 🚀
+This project is my Angular version of the project of the <code>Next Level Week #05</code> event by [Rocketseat](https://rocketseat.com.br/) 🚀
 
 ---
 
@@ -61,11 +61,11 @@ This project is my Angular version of the project of the Next Level Week #05 eve
 
 <div align="center">
 
-To run this project you need to clone this repository, have the NOde Package Manager ([`NPM`](https://www.npmjs.com/get-npm)) or the YARN Package Manager ([`YARN`](https://yarnpkg.com/getting-started)) installed.
+To run this project you need to clone this repository, have the Node Package Manager ([`NPM`](https://www.npmjs.com/get-npm)) or the YARN Package Manager ([`YARN`](https://yarnpkg.com/getting-started)) installed.
 
 🌐 FrontEnd
 
-Open the command prompt in the project directory at ng-podcastr, and execute the following commands:
+Open the command prompt in the project directory at <code>ng-podcastr</code>, and execute the following commands:
 
 <details>
   <summary><i>with <b>npm</b></i></summary>
