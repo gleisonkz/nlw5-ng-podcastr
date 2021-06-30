@@ -33,9 +33,23 @@
     background-color: $color-background;
     width: 100%;
 
+    .link {
+      &--mobile {
+        @media screen and (max-width: 860px) {
+          display: none;
+        }
+      }
+      &--desktop {
+        @media screen and (min-width: 861px) {
+          display: none;
+        }
+      }
+    }
+
     th {
       font-family: $font-secondary;
       color: $color-table-head;
+      padding: rem(5 10 10 0);
 
       @include clamp(font-size, rem(10), 3vw, rem(12));
       @include clamp(line-height, rem(12), 3vw, rem(15));
@@ -52,7 +66,7 @@
     }
 
     td {
-      padding: rem(10 0);
+      padding: rem(5 10 10 0);
       min-height: rem(53);
       font-family: $font-primary;
       color: $color-text-on-surface;

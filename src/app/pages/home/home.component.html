@@ -18,8 +18,11 @@
           [src]="element.thumbnail"
           alt="Thumbnail do Episódio"
         />
-        <a class="link" [routerLink]="['episode', element.id]">{{
+        <a class="link link--desktop" [routerLink]="['episode', element.id]">{{
           element.shortTitle
+        }}</a>
+        <a class="link link--mobile" [routerLink]="['episode', element.id]">{{
+          element.title
         }}</a>
       </td>
     </ng-container>
