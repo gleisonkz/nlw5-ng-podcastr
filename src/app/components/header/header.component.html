@@ -1,16 +1,14 @@
 <mat-toolbar>
-  <div>
-    <img
-      width="50"
-      class="logo logo--angular"
-      src="assets/icons/angular_logo.svg"
-      alt="Angular Logo"
-    />
-    <img class="logo" src="assets/icons/logo.svg" alt="Podcastr Logo" />
+  <img
+    width="50"
+    class="logo logo--angular"
+    src="assets/icons/angular_logo.svg"
+    alt="Angular Logo"
+  />
+  <img class="logo" src="assets/icons/logo.svg" alt="Podcastr Logo" />
 
-    <mat-divider [vertical]="true"></mat-divider>
-    <span class="text">O melhor para você ouvir sempre</span>
-  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <span class="text">O melhor para você ouvir sempre</span>
 
   <span class="text date">{{ currentDate | customDate }}</span>
 </mat-toolbar>

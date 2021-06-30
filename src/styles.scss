@@ -18,7 +18,7 @@ button {
 
 h1,
 h2 {
-  @include clamp(font-size, rem(12), 3vw, rem(24));
+  @include clamp(font-size, rem(15), 3vw, rem(24));
   @include clamp(line-height, rem(18), 3vw, rem(30));
   font-family: $font-secondary;
   font-weight: 600;

@@ -4,38 +4,6 @@
 @import "variables";
 @import "mixins";
 
-.logo {
-  margin-right: rem(33.18);
-
-  @include medias($tiny-mobile, $mobile) {
-    width: rem(120);
-    margin-right: 0;
-  }
-
-  &--angular {
-    @include medias($tiny-mobile, $mobile) {
-      display: none;
-    }
-  }
-}
-
-.text {
-  font-size: rem(14);
-  line-height: rem(17);
-  align-self: center;
-  @include clamp(font-size, rem(12), 3vw, rem(16));
-  @include clamp(line-height, rem(12), 3vw, rem(17));
-  font-family: $font-primary;
-  font-weight: 500;
-  color: $color-text-on-surface;
-
-  &.date {
-    @media screen and (max-width: 830px) {
-      display: none;
-    }
-  }
-}
-
 mat-toolbar {
   height: rem(104);
   background-color: $color-surface;
@@ -44,6 +12,52 @@ mat-toolbar {
 
   @include medias($tiny-mobile, $mobile) {
     padding: rem(20 32);
+  }
+
+  @media screen and (max-width: 840px) {
+    display: grid;
+    grid-template-rows: 1fr min-content min-content;
+    row-gap: 5px;
+    height: auto;
+  }
+
+  .logo {
+    margin-right: rem(33.18);
+
+    @include medias($tiny-mobile, $mobile) {
+      margin-right: 0;
+      margin-bottom: rem(5);
+    }
+
+    &--angular {
+      order: 2;
+      @include medias($tiny-mobile, $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  .date {
+    grid-row: 3;
+  }
+
+  .text {
+    font-size: rem(14);
+    line-height: rem(17);
+    align-self: center;
+    @include clamp(font-size, rem(12), 3vw, rem(16));
+    @include clamp(line-height, rem(12), 3vw, rem(17));
+    font-family: $font-primary;
+    font-weight: 500;
+    color: $color-text-on-surface;
+
+    &:first-of-type {
+      flex: 1;
+    }
+  }
+
+  img {
+    grid-row: 1;
   }
 
   div {
@@ -56,7 +70,7 @@ mat-toolbar {
     align-self: center;
     margin-right: rem(32);
 
-    @include medias($tiny-mobile, $mobile) {
+    @media screen and (max-width: 840px) {
       display: none;
     }
   }
