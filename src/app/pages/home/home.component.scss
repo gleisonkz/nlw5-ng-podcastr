@@ -70,8 +70,8 @@
 
         font-family: Lexend;
         font-weight: 600;
-        font-size: 13.5px;
-        line-height: 20px;
+        font-size: rem(13);
+        line-height: rem(20);
 
         a {
           color: $color-secondary-800;
@@ -100,7 +100,7 @@
     @include flex-center;
     @include size(32);
     background-color: #f7f8fa;
-    border: 1px solid $color-secondary-100;
+    border: rem(1) solid $color-secondary-100;
     border-radius: rem(10);
     transition: filter 0.2s;
 

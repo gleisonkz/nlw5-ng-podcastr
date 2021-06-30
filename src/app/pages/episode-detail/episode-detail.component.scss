@@ -29,7 +29,7 @@ $thumb-size-mobile: rem(300);
     position: absolute;
     @include flex-center;
     @include size(48);
-    border-radius: 12px;
+    border-radius: rem(12);
     transition: filter 0.2s;
 
     &:hover {
@@ -51,7 +51,7 @@ $thumb-size-mobile: rem(300);
   &__image {
     width: $thumb-size;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: rem(16);
     align-self: center;
 
     @include medias($tiny-mobile, $mobile) {

@@ -13,8 +13,8 @@ $max-size-text: rem(220);
   display: flex;
   width: 100%;
   background-color: #ffffff;
-  border: 1px solid #e6e8eb;
-  border-radius: 24px;
+  border: rem(1) solid #e6e8eb;
+  border-radius: rem(24);
   padding: rem(20 20 20 20);
   align-items: center;
 
@@ -72,7 +72,7 @@ $max-size-text: rem(220);
 
   &__image {
     @include size(96);
-    border-radius: 16px;
+    border-radius: rem(16);
     object-fit: cover;
 
     @include medias($tiny-mobile, $mobile) {
@@ -103,7 +103,7 @@ $max-size-text: rem(220);
     @include flex-center;
     @include size(40);
     background-color: white;
-    border: 1px solid $color-secondary-100;
+    border: rem(1) solid $color-secondary-100;
     border-radius: rem(10);
     right: rem(25);
     bottom: rem(25);
