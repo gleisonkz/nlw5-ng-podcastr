@@ -35,6 +35,10 @@ mat-toolbar {
         display: none;
       }
     }
+
+    &--podcast {
+      cursor: pointer;
+    }
   }
 
   .date {
