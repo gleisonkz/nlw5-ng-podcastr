@@ -11,6 +11,21 @@ $thumb-size-mobile: rem(300);
   display: flex;
   flex-direction: column;
 
+  &__members,
+  &__date,
+  &__duration {
+    @include clamp(font-size, rem(12), 3vw, rem(16));
+    @include clamp(line-height, rem(12), 3vw, rem(17));
+    font-family: $font-primary;
+    font-weight: 500;
+    color: $color-text-on-surface;
+  }
+
+  &__description {
+    color: #494d4b;
+    font-family: $font-primary;
+  }
+
   &__thumb {
     position: relative;
     display: flex;

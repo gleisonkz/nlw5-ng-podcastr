@@ -8,6 +8,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -50,12 +51,14 @@ registerLocaleData(ptBr);
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatSlideToggleModule,
     MatDividerModule,
     MatProgressBarModule,
     MatButtonModule,
     MatIconModule,
     MatSliderModule,
     MatTooltipModule,
+
     HttpClientModule,
     MatTableModule,
     MatTabsModule,
