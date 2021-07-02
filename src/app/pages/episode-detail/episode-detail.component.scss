@@ -3,7 +3,7 @@
 @import "colors";
 @import "mixins";
 
-$thumb-size: rem(780);
+$thumb-size: 80%;
 $thumb-size-mobile: rem(300);
 
 .episode {
@@ -32,6 +32,7 @@ $thumb-size-mobile: rem(300);
     align-items: center;
     align-self: center;
     width: $thumb-size;
+    max-width: rem(800);
 
     @include medias($tiny-mobile, $mobile) {
       width: 100%;
@@ -64,7 +65,7 @@ $thumb-size-mobile: rem(300);
   }
 
   &__image {
-    width: $thumb-size;
+    width: 100%;
     object-fit: cover;
     border-radius: rem(16);
     align-self: center;
