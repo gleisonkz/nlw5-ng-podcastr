@@ -12,8 +12,8 @@ $max-size-text: rem(220);
   position: relative;
   display: flex;
   width: 100%;
-  background-color: #ffffff;
-  border: rem(1) solid #e6e8eb;
+  background-color: $color-surface;
+  border: rem(1) solid $color-surface-border;
   border-radius: rem(24);
   padding: rem(20 20 20 20);
   align-items: center;
@@ -27,7 +27,7 @@ $max-size-text: rem(220);
   }
 
   &__title {
-    color: $color-secondary-800;
+    color: $color-title-on-surface;
 
     @include clamp(font-size, rem(12), 3vw, rem(16));
     @include clamp(line-height, rem(15), 3vw, rem(20));

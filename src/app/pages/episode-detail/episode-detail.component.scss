@@ -10,6 +10,7 @@ $thumb-size-mobile: rem(300);
   padding: rem(48);
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   &__members,
   &__date,
@@ -22,7 +23,7 @@ $thumb-size-mobile: rem(300);
   }
 
   &__description {
-    color: #494d4b;
+    color: $color-text-on-background;
     font-family: $font-primary;
   }
 
@@ -79,7 +80,6 @@ $thumb-size-mobile: rem(300);
   &__title {
     @include large-title;
     margin-top: rem(32);
-    color: #494d4b;
   }
 
   &__members,

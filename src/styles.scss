@@ -16,6 +16,13 @@ button {
   cursor: pointer;
 }
 
+html,
+body {
+  width: 100%;
+  font-family: $font-primary;
+  background-color: $color-background;
+}
+
 h1,
 h2 {
   @include clamp(font-size, rem(15), 3vw, rem(24));
@@ -44,4 +51,27 @@ h2 {
   @each $name, $color in $project-colors-theme-dark {
     --color-#{$name}: #{$color};
   }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $color-primary-300 $color-primary-800;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $color-primary-800;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $color-primary-300;
+  border-radius: 20px;
+  border: 3px solid $color-primary-800;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  border: 3px solid $color-primary-500;
 }

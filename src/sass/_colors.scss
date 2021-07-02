@@ -14,21 +14,18 @@ $color-table-head: #{"var(--color-table-head)"};
 $color-text-on-background: #{"var(--color-text-on-background)"};
 $color-text-on-surface: #{"var(--color-text-on-surface)"};
 $color-text-on-primary: #{"var(--color-text-on-primary)"};
-$color-text-on-primary-variant: #{"var(--color-text-on-primary-variant)"};
-$color-text-on-variant: #{"var(--color-text-on-variant)"};
-$color-text-on-variant-light: #{"var(--color-text-on-variant-light)"};
 $color-text-on-secondary: #{"var(--color-text-on-secondary)"};
 
 $color-title-on-background: #{"var(--color-title-on-background)"};
 $color-title-on-surface: #{"var(--color-title-on-surface)"};
 $color-title-on-primary: #{"var(--color-title-on-primary)"};
-$color-title-on-primary-variant: #{"var(--color-title-on-primary-variant)"};
 $color-title-on-secondary: #{"var(--color-title-on-secondary)"};
 
 $color-success: #{"var(--color-success)"};
 $color-danger: #{"var(--color-danger)"};
 $color-background: #{"var(--color-background)"};
 $color-surface: #{"var(--color-surface)"};
+$color-surface-border: #{"var(--color-surface-border)"};
 
 $project-colors: (
   "primary-300": #9f75ff,
@@ -43,43 +40,37 @@ $project-colors: (
   "text-on-background": #808080,
   "text-on-surface": #808080,
   "text-on-primary": #ffffff,
-  "text-on-primary-variant": #093a18,
-  "text-on-primary-variant-light": #037f29,
   "title-on-background": #494d4b,
-  "title-on-surface": #152536,
+  "title-on-surface": #494d4b,
   "title-on-primary": #ffffff,
-  "title-on-primary-variant": #093a18,
-  "title-on-primary-variant-light": #037f29,
   "success": #04d361,
   "danger": #cf6679,
   "background": #f7f8fa,
   "surface": #ffffff,
+  "surface-border": #e6e8eb,
   "table-head": #aba8b3,
 );
 
 $project-colors-theme-dark: (
-  "primary-300": #8f62fa,
-  "primary-400": #834ffa,
-  "primary-500": #794ae6,
-  "primary-800": #6035c7,
+  "primary-300": #6c4bb8,
+  "primary-400": #6239c0,
+  "primary-500": #5a37ad,
+  "primary-800": #381e74,
   "secondary-50": #f7f8fa,
   "secondary-100": #e6e8eb,
   "secondary-200": #afb2b1,
   "secondary-500": #808080,
   "secondary-800": #494d4b,
   "text-on-background": #ffffff,
-  "text-on-surface": #ffffff,
-  "text-on-primary": #ffffff,
-  "text-on-primary-variant": #ffffff,
-  "text-on-primary-variant-light": #ffffff,
-  "title-on-background": #ffffff,
-  "title-on-surface": #ffffff,
-  "title-on-primary": #ffffff,
-  "title-on-primary-variant": #ffffff,
-  "title-on-primary-variant-light": #ffffff,
+  "text-on-surface": #aba8b3,
+  "text-on-primary": #aba8b3,
+  "title-on-background": #ececec,
+  "title-on-surface": #ececec,
+  "title-on-primary": #ececec,
   "success": #28a745,
   "danger": #cf6679,
-  "background": #161515,
-  "surface": #1e1e1e,
+  "background": #121212,
+  "surface": #1f1f1f,
+  "surface-border": #272727,
   "table-head": #aba8b3,
 );
