@@ -60,7 +60,8 @@
     @include flex-center;
     text-align: center;
     width: rem(296);
-    height: rem(346);
+    max-height: rem(346);
+    height: 100%;
     margin-top: rem(60);
     background-color: red;
     border: rem(1.5) dashed $color-primary-300;
