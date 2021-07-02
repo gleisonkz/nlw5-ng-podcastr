@@ -32,7 +32,7 @@
  <a href="#arrow_forward-executar">Executar</a> •
  <a href="#hammer_and_wrench-tecnologias">Tecnologias</a> • 
  <a href="#brain-conceitos-aplicados">Conceitos</a> •
- <a href="#sparkles-funcionalidades">Funcionalidades</a> •
+ <a href="#sparkles-funcionalidades-e-melhorias">Funcionalidades</a> •
  <a href="#boy-autor">Autor</a> •
  <a href="#balance_scale-licença">Licença</a>
 </p>
@@ -183,7 +183,7 @@ $ yarn run json
 
 ---
 
-## :sparkles: **Funcionalidades**
+## :sparkles: **Funcionalidades e Melhorias**
 
 <div align="center">
 
@@ -195,6 +195,7 @@ $ yarn run json
 |              Dark Theme              |
 |      Custom Error State Matcher      |
 |           Hour Custom Pipe           |
+|          Custom Scroll Bar           |
 
 </div>
 
