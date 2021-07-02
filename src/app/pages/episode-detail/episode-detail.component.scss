@@ -25,6 +25,8 @@ $thumb-size-mobile: rem(300);
   &__description {
     color: $color-text-on-background;
     font-family: $font-primary;
+    display: grid;
+    gap: rem(17);
   }
 
   &__thumb {
