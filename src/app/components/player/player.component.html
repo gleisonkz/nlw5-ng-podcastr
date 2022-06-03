@@ -3,10 +3,6 @@
   *ngIf="{ currentEpisode: playerService.currentEpisode$ | async } as context"
 >
   <div class="player__header">
-    <button fxHide.gt-xs (click)="closeSide.emit()" class="player__back-button">
-      <img src="assets/icons/arrow-left.svg" alt="Play Button Icon" />
-    </button>
-
     <h3>
       <img
         class="player__header__image"
