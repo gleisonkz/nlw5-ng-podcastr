@@ -11,16 +11,8 @@ export interface IEpisodeService {
   getEpisodes(): Observable<Episode[]>;
 }
 
-export function tokenServiceFactory(
-  storage: EpisodeStorageService,
-  service: EpisodeService
-) {
-  if (environment.isProduction) {
-    return storage;
-  }
-  return service;
+export function tokenServiceFactory(storage: EpisodeStorageService, service: EpisodeService) {
+  return environment.isProduction ? storage : service;
 }
 
-export const EPISODE_SERVICE_TOKEN = new InjectionToken<IEpisodeService>(
-  'EpisodeServiceToken'
-);
+export const EPISODE_SERVICE_TOKEN = new InjectionToken<IEpisodeService>('EpisodeServiceToken');

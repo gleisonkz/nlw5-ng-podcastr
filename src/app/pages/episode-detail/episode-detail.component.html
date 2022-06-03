@@ -1,4 +1,4 @@
-<div class="episode">
+<div *ngIf="episode$ | async as episode" class="episode">
   <div class="episode__thumb">
     <button [routerLink]="['/']" class="episode__back-button">
       <img src="assets/icons/arrow-left.svg" alt="Play Button Icon" />
@@ -12,13 +12,14 @@
       <img src="assets/icons/play.svg" alt="Play Button Icon" />
     </button>
   </div>
+
   <h1 class="episode__title">{{ episode.title }}</h1>
   <p>
     <span class="episode__members">{{ episode.members }}</span>
     <span class="episode__date">
       {{ episode.published_at | date: "d MMM YY" }}</span
     >
-    <span class="episode__duration"> {{ episode.file.duration | hour }}</span>
+    <span class="episode__duration"> {{ episode.file.duration | pdHour }}</span>
   </p>
   <mat-divider></mat-divider>
   <div [innerHTML]="episode.description" class="episode__description"></div>
