@@ -152,11 +152,11 @@ $ yarn run json
 
 |                  :globe_with_meridians: FrontEnd                  |                        🖥 BackEnd                         |
 | :---------------------------------------------------------------: | :------------------------------------------------------: |
-|                 [Angular 11](https://angular.io/)                 | [Json-Server](https://www.npmjs.com/package/json-server) |
-|        [Angular Material 11](https://material.angular.io/)        |
-|                  [SASS](https://sass-lang.com/)                   |
-|         [TypeScript 4.1](https://www.typescriptlang.org/)         |
-|           [Rxjs 6.6.0](https://rxjs.dev/guide/overview)           |
+|                 [Angular 14](https://angular.io/)                 | [Json-Server](https://www.npmjs.com/package/json-server) |
+|        [Angular Material 14](https://material.angular.io/)        |
+|                  [SCSS](https://sass-lang.com/)                   |
+|        [TypeScript 4.6.4](https://www.typescriptlang.org/)        |
+|           [Rxjs 7.5.0](https://rxjs.dev/guide/overview)           |
 | [Concurrently" 6.0.2](https://www.npmjs.com/package/concurrently) |
 
 </div>
@@ -176,7 +176,7 @@ $ yarn run json
 |       Subject, Behavior Subject       |
 |        Custom Injection Token         |
 |          Material Components          |
-|               Resolver                |
+|        DI Injection Functions         |
 |      HTML Audio Element Handling      |
 
 </div>
