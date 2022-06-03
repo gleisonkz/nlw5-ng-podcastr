@@ -7,11 +7,13 @@ import { Component, EventEmitter, Inject, Output } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(@Inject(DOCUMENT) private ngDocument: Document) {}
-
   currentDate = new Date();
   isChecked = false;
+
   @Output() openSide = new EventEmitter<void>();
+
+  constructor(@Inject(DOCUMENT) private ngDocument: Document) {}
+
   toggleTheme() {
     this.ngDocument.documentElement.classList.toggle('dark-mode');
   }

@@ -1,21 +1,24 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Episode } from 'src/app/models/episode.model';
 import { IEpisodeService } from 'src/app/services/episode-service-token';
 
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 @Injectable({
   providedIn: 'root',
 })
 export class EpisodeService implements IEpisodeService {
+  readonly baseURL = 'http://localhost:3000';
+
+  constructor(private httpClient: HttpClient) {}
+
   getEpisodeByID(episodeID: string): Observable<Episode> {
     return this.httpClient.get<Episode>(
       `${this.baseURL}/episodes/${episodeID}`
     );
   }
-  constructor(private httpClient: HttpClient) {}
-  readonly baseURL = 'http://localhost:3000';
 
   getEpisodes(): Observable<Episode[]> {
     const params = {

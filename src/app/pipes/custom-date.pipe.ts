@@ -2,11 +2,11 @@ import { DatePipe } from '@angular/common';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'customDate',
+  name: 'pdCustomDate',
 })
 export class CustomDatePipe implements PipeTransform {
   constructor(private datePipe: DatePipe) {}
-  transform(value: Date, ...args: unknown[]): unknown {
+  transform(value: Date): string | null {
     let date = this.datePipe.transform(value, 'E d MMMM ');
     date = date
       ?.replace('.', ',')

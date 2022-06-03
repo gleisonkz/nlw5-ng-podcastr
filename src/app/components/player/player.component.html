@@ -41,7 +41,7 @@
       } as timeContext"
       class="player__actions__progress"
     >
-      <span>{{ timeContext.timeElapsed | hour }}</span>
+      <span>{{ timeContext.timeElapsed | pdHour }}</span>
       <mat-slider
         [disabled]="!context.currentEpisode"
         (input)="sliderThumbChange($event)"
@@ -50,7 +50,7 @@
         [value]="timeContext.timeElapsed"
         step="0.1"
       ></mat-slider>
-      <span>{{ timeContext.currentDuration | hour }}</span>
+      <span>{{ timeContext.currentDuration | pdHour }}</span>
     </div>
 
     <div

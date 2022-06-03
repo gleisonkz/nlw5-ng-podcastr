@@ -1,24 +1,18 @@
-import { Component, Inject, OnInit } from '@angular/core';
 import { Episode } from 'src/app/models/episode.model';
-import {
-  EPISODE_SERVICE_TOKEN,
-  IEpisodeService,
-} from 'src/app/services/episode-service-token';
+import { EPISODE_SERVICE_TOKEN, IEpisodeService } from 'src/app/services/episode-service-token';
 import { PlayerService } from 'src/app/services/player.service';
+
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-  constructor(
-    @Inject(EPISODE_SERVICE_TOKEN)
-    private episodeService: IEpisodeService,
-    private playerService: PlayerService
-  ) {}
+  private allEpisodes: Episode[];
+
   latestEpisodes: Episode[];
   nextEpisodes: Episode[];
-  private allEpisodes: Episode[];
 
   displayedColumns: string[] = [
     'podcast',
@@ -27,6 +21,12 @@ export class HomePageComponent implements OnInit {
     'duration',
     'action',
   ];
+
+  constructor(
+    @Inject(EPISODE_SERVICE_TOKEN)
+    private episodeService: IEpisodeService,
+    private playerService: PlayerService
+  ) {}
 
   ngOnInit(): void {
     this.episodeService.getEpisodes().subscribe((episodes) => {

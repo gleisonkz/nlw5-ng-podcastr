@@ -15,7 +15,7 @@
   <mat-divider [vertical]="true"></mat-divider>
   <span class="text">O melhor para você ouvir sempre</span>
 
-  <span class="text date">{{ currentDate | customDate }}</span>
+  <span class="text date">{{ currentDate | pdCustomDate }}</span>
   <mat-slide-toggle
     (change)="toggleTheme()"
     [checked]="isChecked"

@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Episode } from 'src/app/models/episode.model';
 import { PlayerEpisode } from 'src/app/models/player-episode.model';
 import { mapEpisodeToPlayerEpisode } from 'src/app/utils/mapPlayerEpisode';
+
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -48,68 +49,19 @@ export class PlayerService {
     return this.isShuffling$$.value;
   }
 
-  public episodes$ = this.episodes$$.asObservable();
-  public currentEpisode$ = this.currentEpisode$$.asObservable();
-  public isPlaying$ = this.isPlaying$$.asObservable();
-  public isLooping$ = this.isLooping$$.asObservable();
-  public isShuffling$ = this.isShuffling$$.asObservable();
-  public timeElapsed$ = this.timeElapsed$$.asObservable();
-  public duration$ = this.duration$$.asObservable();
-  public hasPrevious$ = this.hasPrevious$$.asObservable();
-  public hasNext$ = this.hasNext$$.asObservable();
+  episodes$ = this.episodes$$.asObservable();
+  currentEpisode$ = this.currentEpisode$$.asObservable();
+  isPlaying$ = this.isPlaying$$.asObservable();
+  isLooping$ = this.isLooping$$.asObservable();
+  isShuffling$ = this.isShuffling$$.asObservable();
+  timeElapsed$ = this.timeElapsed$$.asObservable();
+  duration$ = this.duration$$.asObservable();
+  hasPrevious$ = this.hasPrevious$$.asObservable();
+  hasNext$ = this.hasNext$$.asObservable();
 
   constructor() {
     this.audio = new Audio();
     this.attachListeners();
-  }
-
-  private calculateTime = () => {
-    let currentTime = this.audio.currentTime;
-    this.setTimeElapsed(currentTime);
-  };
-
-  private setPlayerStatus = (event: Event) => {
-    switch (event.type) {
-      case 'playing':
-        this.playerStatus.next('playing');
-        this.isPlaying$$.next(true);
-        break;
-      case 'pause':
-        this.playerStatus.next('paused');
-        break;
-      case 'waiting':
-        this.playerStatus.next('loading');
-        break;
-      case 'ended':
-        this.playerStatus.next('ended');
-        break;
-      default:
-        this.playerStatus.next('paused');
-        this.isPlaying$$.next(false);
-        break;
-    }
-  };
-
-  private attachListeners(): void {
-    this.audio.addEventListener('timeupdate', this.calculateTime, false);
-    this.audio.addEventListener('playing', this.setPlayerStatus, false);
-    this.audio.addEventListener('pause', this.setPlayerStatus, false);
-    this.audio.addEventListener('waiting', this.setPlayerStatus, false);
-    this.audio.addEventListener('ended', this.setPlayerStatus, false);
-  }
-
-  private setAudioUrl(src: string): void {
-    this.audio.src = src;
-    this.playAudio();
-  }
-
-  private setTimeElapsed(currentTimeInSeconds: number): void {
-    this.timeElapsed$$.next(Math.floor(currentTimeInSeconds));
-  }
-
-  private playAudio(): void {
-    this.audio.play();
-    this.isPlaying$$.next(true);
   }
 
   setInitialValue(episodes: PlayerEpisode[]) {
@@ -117,9 +69,9 @@ export class PlayerService {
   }
 
   setLooping() {
-    const loopState = !this.audio.loop;
-    this.audio.loop = loopState;
-    this.isLooping = loopState;
+    const isLooping = !this.audio.loop;
+    this.audio.loop = isLooping;
+    this.isLooping = isLooping;
   }
 
   setShuffling() {
@@ -190,5 +142,54 @@ export class PlayerService {
   seekAudio(position: number): void {
     this.audio.currentTime = position;
     this.setTimeElapsed(position);
+  }
+
+  private calculateTime = () => {
+    let currentTime = this.audio.currentTime;
+    this.setTimeElapsed(currentTime);
+  };
+
+  private setPlayerStatus = (event: Event) => {
+    switch (event.type) {
+      case 'playing':
+        this.playerStatus.next('playing');
+        this.isPlaying$$.next(true);
+        break;
+      case 'pause':
+        this.playerStatus.next('paused');
+        break;
+      case 'waiting':
+        this.playerStatus.next('loading');
+        break;
+      case 'ended':
+        this.playerStatus.next('ended');
+        break;
+      default:
+        this.playerStatus.next('paused');
+        this.isPlaying$$.next(false);
+        break;
+    }
+  };
+
+  private attachListeners(): void {
+    this.audio.addEventListener('timeupdate', this.calculateTime, false);
+    this.audio.addEventListener('playing', this.setPlayerStatus, false);
+    this.audio.addEventListener('pause', this.setPlayerStatus, false);
+    this.audio.addEventListener('waiting', this.setPlayerStatus, false);
+    this.audio.addEventListener('ended', this.setPlayerStatus, false);
+  }
+
+  private setAudioUrl(src: string): void {
+    this.audio.src = src;
+    this.playAudio();
+  }
+
+  private setTimeElapsed(currentTimeInSeconds: number): void {
+    this.timeElapsed$$.next(Math.floor(currentTimeInSeconds));
+  }
+
+  private playAudio(): void {
+    this.audio.play();
+    this.isPlaying$$.next(true);
   }
 }
